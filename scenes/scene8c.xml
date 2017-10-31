@@ -1,0 +1,1762 @@
+<?xml version="1.0"?>
+<image name="scene8c">
+
+    <viewport>
+        <width>1000</width>
+        <height>1000</height>
+        <backgroundColor>0.3 0.3 0.3</backgroundColor>
+    </viewport>
+
+    <camera>
+        <position>-50.0 50.0 50.0</position>
+        <lookAt>0.0 0.0 0.0</lookAt>
+        <up>0.0 1.0 0.0</up>
+    </camera>
+
+    <projection type="angular">
+        <fov>60.0</fov>
+    </projection>
+  
+    <scene>
+        <object type="sphere">
+            <center>0.0 0.0 0.0</center>
+            <radius>10.0</radius>
+            <color>0.98039216 0.98039216 0.98039216</color>
+        </object>
+        <object type="sphere">
+            <center>1.9966683 11.29285 20.0</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>3.7877007 13.557339 19.735014</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>5.5477076 15.537842 18.947075</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>7.2622724 17.192875 17.657063</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>8.917351 18.487768 15.899161</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.499386 19.395401 13.719954</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.9954195 19.896757 11.177185</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.393197 19.981337 8.338236</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.681269 19.647367 5.278334</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.849084 18.901846 2.0785637</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.887077 17.760387 -1.1762863</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.786747 16.246904 -4.3999662</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.540722 14.393096 -7.507053</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.142828 12.237797 -10.415212</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.588133 9.826153 -13.047382</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.872988 7.2086806 -15.333814</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.995062 4.4402084 -17.213919</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.953352 1.5787271 -18.637878</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.748203 -1.3158237 -19.567957</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.381292 -4.1828117 -19.979511</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.855627 -6.962183 -19.861635</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.175514 -9.595717 -19.217451</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.346521 -12.028251 -18.06403</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.375443 -14.208828 -16.431934</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.270229 -16.091774 -14.364416</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.039935 -17.637646 -11.916259</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.694638 -18.814062 -9.152335</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.245358 -19.596382 -6.145888</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>9.703966 -19.968216 -2.9765823</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>8.083087 -19.921778 0.27159908</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>6.3959985 -19.458036 3.5125833</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>4.6565194 -18.58671 6.6604886</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>2.8788981 -17.326048 9.6319</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>1.0776954 -15.702456 12.348078</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-0.7323349 -13.749948 14.737049</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-2.5363665 -11.5094185 16.735506</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-4.3196225 -9.0278015 18.290495</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-6.067496 -6.35708 19.36081</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-7.7656693 -3.553197 19.918089</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-9.400233 -0.674885 19.947563</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.957799 2.2175639 19.448454</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.425607 5.0635614 18.433987</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.7916355 7.8034925 16.931042</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.044696 10.379964 14.979447</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.174522 12.739007 12.630918</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.17186 14.831206 9.947683</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.028542 16.612738 7.0008497</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.737549 18.04628 3.8685024</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.293076 19.10181 0.63364464</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.690569 19.757214 -2.6180038</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.926773 19.998764 -5.8002787</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.999756 19.821402 -8.828854</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.908918 19.22884 -11.623475</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.655003 18.233492 -14.11009</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.240091 16.856209 -16.222807</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.667582 15.125838 -17.90564</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.942162 13.078628 -19.113997</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.069777 10.757459 -19.815857</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.057571 8.210954 -19.992624</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.913835 5.492455 -19.639612</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.647938 2.6589055 -18.766176</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.270248 -0.23033991 -17.39546</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.792051 -3.1147604 -15.563789</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-9.225456 -5.933936 -13.319697</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-7.583293 -8.628814 -10.722651</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-5.8790145 -11.142944 -7.841468</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-4.12658 -13.423663 -4.7524962</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-2.3403447 -15.423198 -1.5375901</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-0.5349389 -17.099663 1.7180604</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>1.2748487 -18.417942 4.9281845</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>3.0741937 -19.35042 8.007718</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>4.8483577 -19.877567 10.875057</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>6.582808 -19.988338 13.454223</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>8.263338 -19.680414 15.6768675</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>9.876182 -18.960245 17.484097</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.408128 -17.842916 18.82802</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.846629 -16.351833 19.673025</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.179901 -14.518229 19.996721</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.397024 -12.380511 19.790531</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.488028 -9.9834585 19.059916</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.443975 -7.3772836 17.82424</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.257038 -4.6165767 16.116243</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.920555 -1.7591666 13.981187</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.42909 1.1350929 11.475649</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.778479 4.0055757 8.66602</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.96586 6.7921534 5.6267533</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.989698 9.436457 2.4383852</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.849798 11.883094 -0.8145969</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.547304 14.080817 -4.0459933</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.084698 15.98359 -7.1701765</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.465765 17.551554 -10.104359</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.695576 18.751867 -12.770789</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.780441 19.559385 -15.09881</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.727855 19.957193 -17.026733</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.546439 19.936958 -18.50347</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.2458725 19.499105 -19.489887</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.836806 18.652805 -19.95985</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.330784 17.415785 -19.900902</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>8.740141 15.813956 -19.314606</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>7.0779057 13.880874 -18.216497</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>5.357694 11.657029 -16.635677</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>3.5935974 9.189005 -14.614032</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>1.8000649 6.5284986 -12.205134</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-0.00821218 3.73124 -9.472817</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-1.816422 0.85582334 -6.4894824</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-3.6097531 -2.0375202 -3.3341846</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-5.3735166 -4.888184 -0.0905355</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-7.0932646 -7.636455 3.1555128</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-8.75491 -10.224765 6.317944</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.344844 -12.598898 9.312958</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.850041 -14.709122 12.061191</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.258174 -16.511234 14.489818</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.557707 -17.967485 16.534483</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.737995 -19.047373 18.141006</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.789371 -19.728277 19.266817</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.703224 -19.995932 19.882084</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.472067 -19.844732 19.970499</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.089603 -19.277847 19.529722</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.550774 -18.307148 18.571434</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.851799 -16.95297 17.121027</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.99022 -15.24368 15.216935</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.964893 -13.215079 12.909615</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.776035 -10.909664 10.260206</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.425188 -8.375724 7.3389153</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.915226 -5.6663375 4.2231526</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.250326 -2.8382585 0.99548244</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.435936 0.04927333 -2.258567</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.478725 2.935773 -5.4527674</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.386537 5.760777 -8.502477</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.168314 8.465111 -11.326881</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.834036 10.9921255 -13.851138</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.394633 13.288888 -16.008358</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-9.861896 15.30729 -17.741377</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-8.248378 17.005049 -19.004274</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-6.5672965 18.346605 -19.763582</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-4.832422 19.303856 -19.99918</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-3.0579636 19.856747 -19.704826</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-1.2584573 19.993702 -18.88832</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>0.5513572 19.711847 -17.5713</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>2.3566554 19.017092 -15.788662</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>4.14265 17.923983 -13.587646</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>5.8947115 16.455423 -11.026573</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>7.598489 14.642171 -8.173312</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>9.2400255 12.52221 -5.1034684</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.805876 10.139947 -1.8983898</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.283215 7.545282 1.3569938</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.659939 4.792567 4.576419</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.924773 1.9394618 7.674575</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.067356 -0.95426905 10.569365</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.078331 -3.8280108 13.18408</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.949413 -6.6215672 15.449434</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.67347 -9.2764225 17.305399</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.24457 -11.736964 18.702793</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.658033 -13.951653 19.604588</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.910477 -15.874095 19.986887</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.99983 -17.464024 19.83956</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.925364 -18.688135 19.16651</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.687683 -19.520786 17.98557</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.28874 -19.944536 16.32804</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.7318 -19.950508 14.237837</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.021425 -19.538576 11.7703495</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.163435 -18.717371 8.990963</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.164856 -17.504095 5.973328</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.033869 -15.92416 2.7974076</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.7797365 -14.010663 -0.4526404</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.412733 -11.803684 -3.690694</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.944056 -9.349454 -6.8309493</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>9.385733 -6.699382 -9.790193</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>7.750531 -3.9089773 -12.490009</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>6.051843 -1.0366915 -14.858857</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>4.303584 1.8573096 -16.833965</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>2.520074 4.7124057 -18.362993</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>0.71592134 7.4687915 -19.405428</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-1.0940955 10.068728 -19.933643</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-2.8951504 12.457756 -19.933643</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-4.6724906 14.585832 -19.405428</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-6.411558 16.408379 -18.362993</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-8.098107 17.887218 -16.833965</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-9.718325 18.991377 -14.858857</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.258937 19.697721 -12.490009</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.707326 19.99146 -9.790193</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.051627 19.866438 -6.8309493</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.28083 19.325274 -3.690694</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.384867 18.379305 -0.4526404</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.35469 17.048344 2.7974076</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.182362 15.360271 5.973328</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.861097 13.350449 8.990963</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.38534 11.060975 11.7703495</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.750793 8.539806 14.237837</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.954466 5.839755 16.32804</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.99469 3.0173788 17.98557</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.871134 0.13179728 19.16651</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.58481 -2.7565448 19.83956</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.138065 -5.587146 19.986887</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.534557 -8.300713 19.604588</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.77923 -10.840405 18.702793</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.878273 -13.153024 17.305399</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.839061 -15.190126 15.449434</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.670111 -16.909042 13.18408</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.380995 -18.273766 10.569365</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.982273 -19.255707 7.674575</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.485404 -19.834301 4.576419</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-8.902646 -19.997425 1.3569938</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-7.246967 -19.741665 -1.8983898</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-5.5319257 -19.072378 -5.1034684</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-3.7715724 -18.00358 -8.173312</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-1.9803253 -16.557663 -11.026573</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-0.17285728 -14.764913 -13.587646</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>1.6360267 -12.662883 -15.788662</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>3.4315097 -10.295603 -17.5713</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>5.198885 -7.712662 -18.88832</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>6.923675 -4.968164 -19.704826</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>8.591753 -2.1195982 -19.99918</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.189454 0.773367 -19.763582</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.703692 3.6501324 -19.004274</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.122064 6.4504385 -17.741377</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.432951 9.115627 -16.008358</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.625616 11.589872 -13.851138</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.690289 13.821343 -11.326881</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.61825 15.7633 -8.502477</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.401897 17.375063 -5.4527674</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.034811 18.622871 -2.258567</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.51181 19.480587 0.99548244</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.828985 19.930243 4.2231526</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.983736 19.96242 7.3389153</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.9748 19.576447 10.260206</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.802246 18.780405 12.909615</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.46749 17.590971 15.216935</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.973272 16.033058 17.121027</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.323643 14.139303 18.571434</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.523922 11.949372 19.529722</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.58066 9.509137 19.970499</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.501583 6.8697157 19.882084</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.295531 4.086394 19.266817</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.972383 1.2174748 18.141006</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.542974 -1.6769468 16.534483</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.019017 -4.5362415 14.489818</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>8.412993 -7.3005157 12.061191</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>6.7380567 -9.911866 9.312958</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>5.007928 -12.315593 6.317944</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>3.2367783 -14.461346 3.1555128</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>1.439116 -16.304176 -0.0905355</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-0.37033427 -17.805485 -3.3341846</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-2.1767511 -18.933823 -6.4894824</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-3.9653378 -19.665552 -9.472817</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-5.721444 -19.98535 -12.205134</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-7.430685 -19.886515 -14.614032</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-9.079061 -19.371117 -16.635677</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.653068 -18.449953 -18.216497</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.139814 -17.142319 -19.314606</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.5271225 -15.475605 -19.900902</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.803628 -13.484724 -19.95985</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.958875 -11.211379 -19.489887</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.9834 -8.70319 -18.50347</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.868813 -6.0126944 -17.026733</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.607859 -3.1962516 -15.09881</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.194485 -0.3128571 -12.770789</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.623888 2.5770907 -10.104359</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.892548 5.4130564 -7.1701765</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.998266 8.135635 -4.0459933</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.940174 10.687797 -0.8145969</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.718752 13.016082 2.4383852</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.33581 15.071718 5.6267533</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.794485 16.81165 8.66602</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.09921 18.199427 11.475649</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.255686 19.20598 13.981187</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.270815 19.810228 16.116243</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.15267 19.999512 17.82424</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.910406 19.769865 19.059916</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.5542 19.1261 19.790531</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.095161 18.081701 19.996721</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-9.54524 16.658546 19.673025</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-7.9171333 14.886445 18.82802</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-6.224176 12.802517 17.484097</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-4.4802356 10.450416 15.6768675</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-2.6995966 7.87941 13.454223</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-0.8968451 5.143354 10.875057</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>0.91325265 2.2995605 8.007718</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>2.7158697 -0.59240156 4.9281845</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>4.496241 -3.4719548 1.7180604</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>6.239783 -6.278781 -1.5375901</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>7.9322133 -8.954086 -4.7524962</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>9.55967 -11.44183 -7.841468</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>11.108823 -13.689902 -10.722651</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.566981 -15.651213 -13.319697</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.922202 -17.284678 -15.563789</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.163384 -18.55608 -17.39546</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.280361 -19.43879 -18.766176</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.263983 -19.914316 -19.639612</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.106194 -19.972696 -19.992624</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.800095 -19.61271 -19.815857</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.34 -18.841898 -19.113997</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.721489 -17.676403 -17.90564</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.941437 -16.140642 -16.222807</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.998043 -14.266785 -14.11009</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.89084 -12.09408 -11.623475</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.62071 -9.668041 -8.828854</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>19.189865 -7.0394864 -5.8002787</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>18.601831 -4.263476 -2.6180038</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>17.86143 -1.3981583 0.63364464</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>16.97472 1.4964466 3.8685024</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>15.94897 4.3597054 7.0008497</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>14.792579 7.1316414 9.947683</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>13.51502 9.754191 12.630918</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>12.126758 12.1724205 14.979447</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>10.639164 14.335674 16.931042</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>9.064423 16.198639 18.433987</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>7.415434 17.722292 19.448454</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>5.705704 18.874716 19.947563</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>3.9492383 19.631771 19.918089</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>2.1604235 19.977602 19.36081</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>0.3539126 19.904963 18.290495</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-1.4554974 19.415373 16.735506</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-3.252985 18.51909 14.737049</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-5.023827 17.23489 12.348078</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-6.7535186 15.58967 9.6319</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-8.427891 13.617894 6.6604886</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.033229 11.360865 3.5125833</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.556384 8.865859 0.27159908</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-12.984879 6.1851406 -2.9765823</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.307013 3.3748627 -6.145888</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.511955 0.49389127 -9.152335</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.589838 -2.3974257 -11.916259</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.531832 -5.2385235 -14.364416</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.33022 -7.9698906 -16.431934</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.97846 -10.534312 -18.06403</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.471249 -12.878072 -19.217451</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.804543 -14.952075 -19.861635</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.975616 -16.712877 -19.979511</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.983068 -18.123596 -19.567957</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.826834 -19.15468 -18.637878</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.508196 -19.784533 -17.213919</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-19.029764 -19.999958 -15.333814</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-18.395458 -19.796444 -13.047382</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-17.61047 -19.178255 -10.415212</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-16.681234 -18.15834 -7.507053</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-15.615358 -16.758064 -4.3999662</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-14.4215765 -15.006757 -1.1762863</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-13.109665 -12.941103 2.0785637</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-11.69037 -10.604372 5.278334</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-10.175318 -8.045511 8.338236</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-8.576919 -5.3181224 11.177185</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-6.908264 -2.4793348 13.719954</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-5.1830235 0.41138762 15.899161</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-3.4153278 3.2934926 17.657063</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>-1.6196568 6.106609 18.947075</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+        <object type="sphere">
+            <center>0.18928097 8.79181 19.735014</center>
+            <radius>1.0</radius>
+            <color>1.0 0.39215687 0.39215687</color>
+        </object>
+    </scene>
+</image>

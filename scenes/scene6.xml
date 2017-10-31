@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<image>
+
+  <viewport>
+    <width>1000</width>
+    <height>1000</height>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </viewport>
+
+  <camera>
+    <position>75.0 75.0 75.0</position>
+    <lookAt>0.0 0.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="hemispherical">
+   <distortionFactor>10</distortionFactor>
+  </projection>
+
+  <scene>
+    <object id="central" type="sphere">
+      <center>0.0 0.0 0.0</center>
+      <radius>39.0</radius>
+      <color>200 125 200</color>
+    </object>
+
+    <object id="+++" type="sphere">
+      <center>+25.0 +25.0 +25.0</center>
+      <radius>5.0</radius>
+      <color>255 0 0</color>
+    </object>
+
+    <object id="-++" type="sphere">
+      <center>-25.0 +25.0 +25.0</center>
+      <radius>5.0</radius>
+      <color>0 255 0</color>
+    </object>
+
+    <object id="--+" type="sphere">
+      <center>-25.0 -25.0 +25.0</center>
+      <radius>5.0</radius>
+      <color>0 0 255</color>
+    </object>
+
+    <object id="+-+" type="sphere">
+      <center>+25.0 -25.0 +25.0</center>
+      <radius>5.0</radius>
+      <color>0 255 255</color>
+    </object>
+
+    <object id="++-" type="sphere">
+      <center>+25.0 +25.0 -25.0</center>
+      <radius>5.0</radius>
+      <color>155 0 0</color>
+    </object>
+
+    <object id="-+-" type="sphere">
+      <center>-25.0 +25.0 -25.0</center>
+      <radius>5.0</radius>
+      <color>0 155 0</color>
+    </object>
+
+    <object id="---" type="sphere">
+      <center>-25.0 -25.0 -25.0</center>
+      <radius>5.0</radius>
+      <color>0 0 155</color>
+    </object>
+
+    <object id="+--" type="sphere">
+      <center>+25.0 -25.0 -25.0</center>
+      <radius>5.0</radius>
+      <color>0 155 155</color>
+    </object>
+  </scene>
+
+</image>

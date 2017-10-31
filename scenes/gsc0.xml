@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<image name="gsc0">
+
+  <viewport>
+    <width>1000</width>
+    <height>1000</height>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </viewport>
+
+  <camera>
+    <position>110.0 -60.0 110.0</position>
+    <lookAt>0.0 0.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+    <fov>60.0</fov>
+    <aspect>1.0</aspect>
+  </projection>
+
+  <scene>
+    <object id="vertical" type="cylinder">
+      <center>0.0 0.0 0.0</center>
+      <axe>0.0 1.0 0.0</axe>
+      <radius>25.0</radius>
+      <length>100.0</length>
+      <color>1.0 0.0 0.0</color>
+    </object>
+    
+    <object id="horizontal" type="cylinder">
+      <center>0.0 0.0 0.0</center>
+      <axe>1.0 0.0 0.0</axe>
+      <radius>25.0</radius>
+      <length>100.0</length>
+      <color>0.0 1.0 0.0</color>
+    </object>
+
+    <object id="profundo" type="cylinder">
+      <center>0.0 0.0 0.0</center>
+      <axe>0.0 0.0 1.0</axe>
+      <radius>25.0</radius>
+      <length>100.0</length>
+      <color>0.0 0.0 1.0</color>
+    </object>
+    
+    <object id="vminus" type="sphere">
+      <center>0.0 -60.0 0.0</center>
+      <radius>20.0</radius>
+      <color>1.0 0.5 0.5</color>
+    </object>  
+    
+    <object id="vplus" type="sphere">
+      <center>0.0 60.0 0.0</center>
+      <radius>18.0</radius>
+      <color>1.0 0.5 0.5</color>
+    </object>     
+    
+    <object id="hminus" type="sphere">
+      <center>-60.0 0.0 0.0</center>
+      <radius>18.0</radius>
+      <color>0.5 1.0 0.5</color>
+    </object>  
+    
+    <object id="hplus" type="sphere">
+      <center>60.0 0.0 0.0</center>
+      <radius>18.0</radius>
+      <color>0.5 1.0 0.5</color>
+    </object>                
+
+    <object id="pminus" type="sphere">
+      <center>0.0 0.0 -60.0</center>
+      <radius>18.0</radius>
+      <color>0.5 0.5 1.0</color>
+    </object>  
+    
+    <object id="pplus" type="sphere">
+      <center>0.0 0.0 60.0</center>
+      <radius>18.0</radius>
+      <color>0.5 0.5 1.0</color>
+    </object> 
+    
+  </scene>
+
+</image>
