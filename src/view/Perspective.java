@@ -18,6 +18,26 @@ public class Perspective extends Projection {
 
   static private class PerspectiveRayGenerator extends RayGenerator {
 
+    @Override
+    public Ray getRay(final int m, final int n) {
+      // Obtenemos las coordenadas del punto central de la celda a colorear
+      final float x = (float) (m + 0.5 * w / W - w / 2);
+      final float y = (float) (n + 0.5 * h / H - h / 2);
+      final float z = -1.0f;
+
+      // A partir de las coordenadas, construimos el punto de partida del
+      // rayo (Q)
+      final Point3D Q = new Point3D(x, y, z);
+
+      // Cambiamos el punto de partida del rayo al sistema de coordenadas
+      // de la escena
+      camera.toSceneCoord(Q);
+
+      // Creamos el rayo que pasa por el punto donde se posiciona la
+      // cámara y el punto (Q) de partida
+      return new Ray(camera.getPosition(), Q);
+    }
+
   }
 
 }

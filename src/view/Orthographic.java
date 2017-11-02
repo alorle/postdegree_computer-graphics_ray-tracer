@@ -17,6 +17,26 @@ public class Orthographic extends Projection {
 
   static private class OrtographicRayGenerator extends RayGenerator {
 
+    @Override
+    public Ray getRay(final int m, final int n) {
+      // Obtenemos las coordenadas del punto central de la celda a colorear
+      final float x = (float) (m + 0.5 * w / W - w / 2);
+      final float y = (float) (n + 0.5 * h / H - h / 2);
+      final float z = 0.0f;
+
+      // A partir de las coordenadas, construimos el punto de partida del
+      // rayo (R)
+      final Point3D R = new Point3D(x, y, z);
+
+      // Cambiamos el punto de partida del rayo al sistema de coordenadas
+      // de la escena
+      camera.toSceneCoord(R);
+
+      // Creamos el rayo desde el punto (R) de partida en la dirección de
+      // la vista
+      return new Ray(R, camera.getLook());
+    }
+
   }
 
 }
