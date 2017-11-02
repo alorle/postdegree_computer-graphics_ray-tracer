@@ -79,18 +79,6 @@ public final class Vector3D extends Vector3f {
     return (float) (getX() * x_ + getY() * y_ + getZ() * z_);
   }
 
-  public float getX() {
-    return x;
-  }
-
-  public float getY() {
-    return y;
-  }
-
-  public float getZ() {
-    return z;
-  }
-
   @Override
   public String toString() {
     return "(" + getX() + "," + getX() + "," + getZ() + ")";

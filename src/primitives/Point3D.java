@@ -37,18 +37,6 @@ public final class Point3D extends Point3f {
     return new Vector3D(x_, y_, z_);
   }
 
-  public float getX() {
-    return x;
-  }
-
-  public float getY() {
-    return y;
-  }
-
-  public float getZ() {
-    return z;
-  }
-
   @Override
   public String toString() {
     return "(" + getX() + "," + getY() + "," + getZ() + ")";
