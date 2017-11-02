@@ -1,6 +1,5 @@
 package parser;
 
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -41,16 +40,16 @@ public final class Parser {
   private final Projection projection;
   private final Group3D scene;
 
-  public Parser (final File in) throws ParserConfigurationException, SAXException, IOException  {
+  public Parser(final File in) throws ParserConfigurationException, SAXException, IOException {
 
     final DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
     final DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
     final Document doc = dBuilder.parse(in);
-    
+
     final NodeList rootElementList = doc.getElementsByTagName("image");
-    
+
     if (rootElementList.getLength() > 0) {
-      
+
       final Element rootElement = (Element) rootElementList.item(0);
       final String imageName = rootElement.getAttribute("name");
 
@@ -58,16 +57,15 @@ public final class Parser {
       this.camera = this.parseCamera(rootElement);
       this.projection = this.parseProjection(rootElement);
       this.scene = this.parseScene(rootElement);
-    
-    }
-    else {
+
+    } else {
       throw new SAXException("Elemento <image> no encontrado");
     }
 
   }
-  
-  private Image parseViewport (final String tag, final Element doc) throws SAXException {
-  
+
+  private Image parseViewport(final String tag, final Element doc) throws SAXException {
+
     if (doc.getElementsByTagName("viewport").getLength() > 0) {
 
       final Element el
@@ -83,11 +81,11 @@ public final class Parser {
     } else {
       throw new SAXException("Elemento <viewport> no encontrado");
     }
-    
+
   }
 
-  private Camera parseCamera (final Element doc) throws SAXException {
-    
+  private Camera parseCamera(final Element doc) throws SAXException {
+
     if (doc.getElementsByTagName("camera").getLength() > 0) {
       final Element el
               = (Element) doc.getElementsByTagName("camera").item(0);
@@ -102,11 +100,11 @@ public final class Parser {
     } else {
       throw new SAXException("Elemento <camera> no encontrado");
     }
-    
+
   }
 
-  private Projection parseProjection (final Element doc) throws SAXException {
-    
+  private Projection parseProjection(final Element doc) throws SAXException {
+
     if (doc.getElementsByTagName("projection").getLength() > 0) {
       final Element el
               = (Element) doc.getElementsByTagName("projection").item(0);
@@ -127,7 +125,7 @@ public final class Parser {
           final float height = Float.parseFloat(
                   el.getElementsByTagName("height").item(0).getTextContent());
           final float aspect = Float.parseFloat(
-                  el.getElementsByTagName("aspect").item(0).getTextContent());          
+                  el.getElementsByTagName("aspect").item(0).getTextContent());
 
           _projection = new Orthographic(height, aspect);
         }
@@ -135,18 +133,18 @@ public final class Parser {
 
         case "hemispherical": {
           final float factor = Float.parseFloat(
-                  el.getElementsByTagName("distortionFactor").item(0).getTextContent());          
+                  el.getElementsByTagName("distortionFactor").item(0).getTextContent());
           _projection = new Hemispherical(factor);
         }
         break;
-          
-        case "angular": {         
+
+        case "angular": {
           final float fov = Float.parseFloat(
-                  el.getElementsByTagName("fov").item(0).getTextContent());          
+                  el.getElementsByTagName("fov").item(0).getTextContent());
 
           _projection = new Angular(fov);
         }
-        break;          
+        break;
 
         default: {
           _projection = null;
@@ -158,11 +156,11 @@ public final class Parser {
     } else {
       throw new SAXException("Elemento <projection> no encontrado");
     }
-    
+
   }
 
-  private Group3D parseScene (final Element doc) throws SAXException {
-    
+  private Group3D parseScene(final Element doc) throws SAXException {
+
     if (doc.getElementsByTagName("scene").getLength() > 0) {
 
       final Group3D g = new Group3D();
@@ -176,26 +174,26 @@ public final class Parser {
       }
 
       return g;
-      
+
     } else {
       throw new SAXException("Elemento <scene> no encontrado");
-    }   
-    
+    }
+
   }
 
-  private Object3D parseObject (final Element el) {
+  private Object3D parseObject(final Element el) {
 
     final String id = el.getAttribute("id");
-    
+
     Color color = null;
-    
+
     final NodeList colorList = el.getElementsByTagName("color");
     if (colorList.getLength() > 0) {
       final String colorElementText = colorList.item(0).getTextContent();
       color = parseColor(colorElementText);
     }
-    
-    final Object3D object;     
+
+    final Object3D object;
     switch (el.getAttribute("type")) {
       case "sphere": {
         final Point3D center = this.parsePoint3D(
@@ -204,7 +202,7 @@ public final class Parser {
                 el.getElementsByTagName("radius").item(0).getTextContent());
 
         object = new Sphere(center, radius, color);
-        
+
       }
       break;
 
@@ -213,11 +211,11 @@ public final class Parser {
                 el.getElementsByTagName("point").item(0).getTextContent());
         final Vector3D normal = this.parseVector3D(
                 el.getElementsByTagName("normal").item(0).getTextContent());
-        
+
         object = new Plane(point, normal, color);
-        
+
       }
-      break;      
+      break;
 
       case "triangle": {
         final Point3D vertex0 = this.parsePoint3D(
@@ -231,7 +229,6 @@ public final class Parser {
 
       }
       break;
-        
 
       case "cylinder": {
         final Point3D center = this.parsePoint3D(
@@ -244,23 +241,23 @@ public final class Parser {
                 el.getElementsByTagName("length").item(0).getTextContent());
 
         axedirection.normalize();
-        object = new Cylinder(center, axedirection, radius, L,  color);
+        object = new Cylinder(center, axedirection, radius, L, color);
 
       }
-      break;        
+      break;
 
       case "triangular": {
-        
+
         final HashMap<Integer, Point3D> vertices = new HashMap<>();
         final Element verticesElement = (Element) el.getElementsByTagName("vertices").item(0);
-        final NodeList vertexList = verticesElement.getElementsByTagName("vertex"); 
+        final NodeList vertexList = verticesElement.getElementsByTagName("vertex");
         for (int j = 0; j < vertexList.getLength(); ++j) {
           vertices.put(j + 1, this.parsePoint3D(vertexList.item(j).getTextContent()));
         }
-       
+
         final List<String> facets = new ArrayList<>();
         final Element facetsElement = (Element) el.getElementsByTagName("facets").item(0);
-        final NodeList facetList = facetsElement.getElementsByTagName("facet");        
+        final NodeList facetList = facetsElement.getElementsByTagName("facet");
         for (int j = 0; j < facetList.getLength(); ++j) {
           facets.add(facetList.item(j).getTextContent());
         }
@@ -272,20 +269,20 @@ public final class Parser {
         }
 
       }
-      break;        
-      
+      break;
+
       default: {
         object = null;
       }
-      
+
     }
 
     return object;
   }
 
-  private Color parseColor (final String c) {
+  private Color parseColor(final String c) {
     final StringTokenizer st = new StringTokenizer(c);
-    
+
     float r = Float.parseFloat(st.nextToken());
     float g = Float.parseFloat(st.nextToken());
     float b = Float.parseFloat(st.nextToken());
@@ -297,7 +294,7 @@ public final class Parser {
     return new Color(r, g, b);
   }
 
-  private Vector3D parseVector3D (final String v) {
+  private Vector3D parseVector3D(final String v) {
     final StringTokenizer st = new StringTokenizer(v);
     final float x = Float.parseFloat(st.nextToken());
     final float y = Float.parseFloat(st.nextToken());
@@ -306,7 +303,7 @@ public final class Parser {
     return new Vector3D(x, y, z);
   }
 
-  private Point3D parsePoint3D (final String p) {
+  private Point3D parsePoint3D(final String p) {
     final StringTokenizer st = new StringTokenizer(p);
     final float x = Float.parseFloat(st.nextToken());
     final float y = Float.parseFloat(st.nextToken());
@@ -314,26 +311,26 @@ public final class Parser {
 
     return new Point3D(x, y, z);
   }
-  
-  private Point2f parsePoint2f (final String p) {
+
+  private Point2f parsePoint2f(final String p) {
     final StringTokenizer st = new StringTokenizer(p);
     final float u = Float.parseFloat(st.nextToken());
     final float v = Float.parseFloat(st.nextToken());
 
     return new Point2f(u, v);
-  }  
-  
-  public Image getViewport () {
+  }
+
+  public Image getViewport() {
     return viewport;
   }
-  
-  public Camera getCamera () {
+
+  public Camera getCamera() {
     camera.setProjection(projection);
     return camera;
   }
-  
-  public Group3D getScene () {
+
+  public Group3D getScene() {
     return scene;
   }
-  
+
 }

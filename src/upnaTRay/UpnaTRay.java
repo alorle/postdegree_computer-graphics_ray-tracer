@@ -17,7 +17,7 @@ public final class UpnaTRay {
    * @throws FileNotFoundException
    * @throws Exception
    */
-  public static void main (final String[] args)
+  public static void main(final String[] args)
           throws FileNotFoundException, Exception {
 
     final String path = System.getProperty("user.dir") + File.separator
@@ -28,11 +28,11 @@ public final class UpnaTRay {
     final Image image = parser.getViewport();
     final Camera camera = parser.getCamera();
     final Group3D scene = parser.getScene();
-    
+
     final long t0 = System.nanoTime();
     image.synthesis(camera, scene);
     final float t1 = (float) ((System.nanoTime() - t0) / 1E+9);
-    
+
     System.out.println("Rendering time: " + t1 + " seconds");
 
     image.show();

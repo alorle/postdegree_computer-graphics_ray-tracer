@@ -1,9 +1,9 @@
 package objects;
+
 /**
  *
  * @author MAZ
  */
-
 import java.util.List;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -20,38 +20,37 @@ import tracer.Hit;
 import tracer.Ray;
 
 public class TriangularMesh extends Object3D {
-  
-  private final Collection<Triangle> triangles;
-   
-  public TriangularMesh (final Map<Integer, Point3D> vertices,
-                         final List<String> facets,
-                         final Color color) {
-    
-    this(vertices, facets, color, null); 
-    
-  }
-  
-  public TriangularMesh (final Map<Integer, Point3D> vertices,
-                         final List<String> facets) {
-    
-    this(vertices, facets, (Color) null, null);
-    
-  }
-  
-  private TriangularMesh (final Map<Integer, Point3D> vertices,
-                          final List<String> facets,
-                          final Color color,
-                          final Void diff) {
-    
-    /* */
 
-  }  
+  private final Collection<Triangle> triangles;
+
+  public TriangularMesh(final Map<Integer, Point3D> vertices,
+          final List<String> facets,
+          final Color color) {
+
+    this(vertices, facets, color, null);
+
+  }
+
+  public TriangularMesh(final Map<Integer, Point3D> vertices,
+          final List<String> facets) {
+
+    this(vertices, facets, (Color) null, null);
+
+  }
+
+  private TriangularMesh(final Map<Integer, Point3D> vertices,
+          final List<String> facets,
+          final Color color,
+          final Void diff) {
+
+    /* */
+  }
 
   @Override
-  protected Hit _intersects (final Ray ray) {
+  protected Hit _intersects(final Ray ray) {
 
-      return Hit.NOHIT;
+    return Hit.NOHIT;
 
   }
-  
+
 }

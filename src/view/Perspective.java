@@ -6,9 +6,9 @@ import tracer.Ray;
 
 public class Perspective extends Projection {
 
-  public Perspective (final float fov, final float aspect) {
+  public Perspective(final float fov, final float aspect) {
     super((float) (2.0 * Math.tan(Math.toRadians(0.5 * fov))) * aspect,
-          (float) (2.0 * Math.tan(Math.toRadians(0.5 * fov))));
+            (float) (2.0 * Math.tan(Math.toRadians(0.5 * fov))));
   }
 
   @Override

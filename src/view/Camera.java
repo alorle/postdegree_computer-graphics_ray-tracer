@@ -17,11 +17,11 @@ public class Camera {
   private Projection optics;
 
   // CONSTRUCTORES
-  public Camera (final Point3D V, final Point3D C, final Vector3D up) {
+  public Camera(final Point3D V, final Point3D C, final Vector3D up) {
 
   }
 
-  public Camera (final Camera c) {
+  public Camera(final Camera c) {
     this.position = new Point3D(c.position);
     this.up = new Vector3D(c.up);
     this.lookAt = new Vector3D(c.lookAt);
@@ -29,31 +29,31 @@ public class Camera {
     this.optics = c.optics;
   }
 
-  public final void toSceneCoord (final Vector3D v) {
+  public final void toSceneCoord(final Vector3D v) {
     camera2scene.transform(v);
   }
 
-  public final void toSceneCoord (final Point3D p) {
+  public final void toSceneCoord(final Point3D p) {
     camera2scene.transform(p);
   }
 
-  public final Vector3D getLook () {
+  public final Vector3D getLook() {
     return this.lookAt;
   }
 
-  public final Point3D getPosition () {
+  public final Point3D getPosition() {
     return this.position;
   }
 
-  public final void setProjection (final Projection p) {
+  public final void setProjection(final Projection p) {
     this.optics = p;
   }
 
-  public final Projection getProjection () {
+  public final Projection getProjection() {
     return this.optics;
   }
 
-  public final RayGenerator getRayGenerator (final int W, final int H) {
+  public final RayGenerator getRayGenerator(final int W, final int H) {
     return this.optics.getRayGenerator(this, W, H);
   }
 

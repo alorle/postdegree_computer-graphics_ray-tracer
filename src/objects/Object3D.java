@@ -11,7 +11,7 @@ public abstract class Object3D {
   //protected Shader material;
   protected boolean avoided = false;
 
-  public Object3D () {
+  public Object3D() {
     color = Color.black;
   }
 
@@ -20,24 +20,24 @@ public abstract class Object3D {
    *
    * @param color
    */
-  public Object3D (final Color color) {
+  public Object3D(final Color color) {
     this.color = color;
-  } 
+  }
 
   /**
    * Devuelve el color del objeto
    *
    * @return this.color
    */
-  public final Color getColor () {
+  public final Color getColor() {
     return color;
   }
-  
-  public final void avoid () {
+
+  public final void avoid() {
     avoided = true;
   }
-  
-  public final boolean isAvoided () {
+
+  public final boolean isAvoided() {
     return avoided;
   }
 
@@ -46,16 +46,16 @@ public abstract class Object3D {
    *
    * @param ray Rayo para estudio
    * @return
-   */  
-  public final Hit intersects (final Ray ray) {
+   */
+  public final Hit intersects(final Ray ray) {
     if (isAvoided()) {
       avoided = false;
       return Hit.NOHIT;
-    }
-    else
+    } else {
       return _intersects(ray);
+    }
   }
-  
-  protected abstract Hit _intersects (final Ray ray);
-  
+
+  protected abstract Hit _intersects(final Ray ray);
+
 }

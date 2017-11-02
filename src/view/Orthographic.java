@@ -6,12 +6,12 @@ import tracer.Ray;
 
 public class Orthographic extends Projection {
 
-  public Orthographic (final float h, final float aspect) {
+  public Orthographic(final float h, final float aspect) {
     super(h * aspect, h);
   }
 
   @Override
-  public RayGenerator getRayGenerator (final Camera c, final int W, final int H) {
+  public RayGenerator getRayGenerator(final Camera c, final int W, final int H) {
     return new OrtographicRayGenerator(c, W, H);
   }
 

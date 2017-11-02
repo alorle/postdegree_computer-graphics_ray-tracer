@@ -9,14 +9,14 @@ public final class Ray {
   private final Point3D R;
   private final float evil;
 
-  public Ray (final Point3D R, final Vector3D v) {
+  public Ray(final Point3D R, final Vector3D v) {
     this.v = new Vector3D(v);
     this.v.normalize();
     this.R = new Point3D(R);
     this.evil = v.dot(v);
   }
 
-  public Ray (final Point3D R, final Point3D Q) {
+  public Ray(final Point3D R, final Point3D Q) {
     this.v = new Vector3D(R, Q);
     this.v.normalize();
     this.R = new Point3D(R);
@@ -28,34 +28,34 @@ public final class Ray {
    *
    * @param r
    */
-  public Ray (final Ray r) {
+  public Ray(final Ray r) {
     this.v = r.getDirection();
     this.R = r.getStartingPoint();
     this.evil = r.getEvil();
   }
 
-  public Vector3D getDirection () {
+  public Vector3D getDirection() {
     return this.v;
   }
 
-  public Point3D getStartingPoint () {
+  public Point3D getStartingPoint() {
     return this.R;
   }
 
-  public Point3D pointAtParameter (final float t) {
+  public Point3D pointAtParameter(final float t) {
     return R.add(t, v);
   }
-  
-  public float getEvil () {
+
+  public float getEvil() {
     return evil;
   }
-  
-  public boolean isOperative () {
+
+  public boolean isOperative() {
     return (this.getEvil() > 0.5e-6f);
-  }    
+  }
 
   @Override
-  public String toString () {
+  public String toString() {
     return "Rayo: Origen " + R.toString() + " Direccion " + v.toString() + "\n";
   }
 
