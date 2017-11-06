@@ -18,6 +18,10 @@ public class Perspective extends Projection {
 
   static private class PerspectiveRayGenerator extends RayGenerator {
 
+    private PerspectiveRayGenerator(Camera c, int W, int H) {
+      super(c, W, H);
+    }
+
     @Override
     public Ray getRay(final int m, final int n) {
       // Obtenemos las coordenadas del punto central de la celda a colorear

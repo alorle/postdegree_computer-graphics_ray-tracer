@@ -17,6 +17,10 @@ public class Orthographic extends Projection {
 
   static private class OrtographicRayGenerator extends RayGenerator {
 
+    private OrtographicRayGenerator(final Camera c, final int W, final int H) {
+      super(c, W, H);
+    }
+
     @Override
     public Ray getRay(final int m, final int n) {
       // Obtenemos las coordenadas del punto central de la celda a colorear
