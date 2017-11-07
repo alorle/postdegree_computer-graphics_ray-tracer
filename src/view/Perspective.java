@@ -25,8 +25,8 @@ public class Perspective extends Projection {
     @Override
     public Ray getRay(final int m, final int n) {
       // Obtenemos las coordenadas del punto central de la celda a colorear
-      final float x = (float) (m + 0.5 * w / W - w / 2);
-      final float y = (float) (n + 0.5 * h / H - h / 2);
+      final float x = (float) (m + 0.5) * wW - whalf;
+      final float y = (float) (n + 0.5) * hH - hhalf;
       final float z = -1.0f;
 
       // A partir de las coordenadas, construimos el punto de partida del
