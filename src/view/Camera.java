@@ -25,10 +25,12 @@ public class Camera {
   public Camera(final Point3D V, final Point3D C, final Vector3D up) {
     this.position = V;
     this.up = up;
+    this.up.normalize();
 
-    // El Vector lookAt es el definido por la posición (V) y el punto hacia ele
-    // qu se orienta la cámara (C)
+    // El Vector lookAt es el definido por la posición (V) y el punto hacia el
+    // que se orienta la cámara (C)
     this.lookAt = new Vector3D(V, C);
+    this.lookAt.normalize();
 
     // L amatriz de transformación de vista se puede construir como
     // concatenación de transformaciones elementales determinadas por
@@ -40,9 +42,8 @@ public class Camera {
     this.camera2scene = new Matrix4f();
 
     final Vector3D w = this.lookAt.opposite();
-    w.normalize();
 
-    final Vector3D u = new Vector3D(up);
+    final Vector3D u = new Vector3D(this.up);
 
     final float s = u.dot(w);
     final float t = (float) (1 / Math.sqrt(1 - s * s));
