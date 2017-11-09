@@ -43,7 +43,29 @@ public class TriangularMesh extends Object3D {
           final Color color,
           final Void diff) {
 
-    /* */
+    triangles = new ArrayList<>(facets.size());
+    final Random rg = new Random(System.nanoTime());
+
+    facets.stream().map((facet) -> new StringTokenizer(facet)).map((st) -> {
+      // Obtenemos los índices de los vertices de la faceta
+      final int index0 = Integer.parseInt(st.nextToken());
+      final int index1 = Integer.parseInt(st.nextToken());
+      final int index2 = Integer.parseInt(st.nextToken());
+
+      // Obtenemos los vertices de la faceta
+      final Point3D vertex0 = vertices.get(index0);
+      final Point3D vertex1 = vertices.get(index1);
+      final Point3D vertex2 = vertices.get(index2);
+
+      // Obtenemos el color de la faceta
+      final Color _color = (color != null)
+              ? color
+              : new Color(rg.nextFloat(), rg.nextFloat(), rg.nextFloat());
+
+      return new Triangle(vertex0, vertex1, vertex2, _color);
+    }).forEachOrdered((obj) -> {
+      triangles.add(obj);
+    });
   }
 
   @Override
