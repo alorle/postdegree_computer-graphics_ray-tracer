@@ -70,8 +70,16 @@ public class TriangularMesh extends Object3D {
 
   @Override
   protected Hit _intersects(final Ray ray) {
+    Hit closestHit = Hit.NOHIT;
 
-    return Hit.NOHIT;
+    for (final Triangle triangle : triangles) {
+      final Hit lastHit = triangle.intersects(ray);
+      if (lastHit.isCloser(closestHit)) {
+        closestHit = lastHit;
+      }
+    }
+
+    return closestHit;
 
   }
 
