@@ -47,11 +47,18 @@ public class TriangularMesh extends Object3D {
     final Random rg = new Random(System.nanoTime());
 
     facets.stream().map((facet) -> new StringTokenizer(facet)).map((st) -> {
+      // Obtenemos los tokens que definen la faceta
+      String token0 = st.nextToken();
+      String token1 = st.nextToken();
+      String token2 = st.nextToken();
+      // Arreglamos los tokens, quedandonos únicmanete con el primer número
+      final StringTokenizer st0 = new StringTokenizer(token0, "/");
+      final StringTokenizer st1 = new StringTokenizer(token1, "/");
+      final StringTokenizer st2 = new StringTokenizer(token2, "/");
       // Obtenemos los índices de los vertices de la faceta
-      final int index0 = Integer.parseInt(st.nextToken());
-      final int index1 = Integer.parseInt(st.nextToken());
-      final int index2 = Integer.parseInt(st.nextToken());
-
+      final int index0 = Integer.parseInt(st0.nextToken());
+      final int index1 = Integer.parseInt(st1.nextToken());
+      final int index2 = Integer.parseInt(st2.nextToken());
       // Obtenemos los vertices de la faceta
       final Point3D vertex0 = vertices.get(index0);
       final Point3D vertex1 = vertices.get(index1);
@@ -63,9 +70,7 @@ public class TriangularMesh extends Object3D {
               : new Color(rg.nextFloat(), rg.nextFloat(), rg.nextFloat());
 
       return new Triangle(vertex0, vertex1, vertex2, _color);
-    }).forEachOrdered((obj) -> {
-      triangles.add(obj);
-    });
+    }).forEachOrdered(triangles::add);
   }
 
   @Override
