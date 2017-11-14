@@ -27,6 +27,8 @@ public class Angular extends Projection {
   static private class AngularRayGenerator extends RayGenerator {
 
     private final float omega;
+    private final float omegaHalf;
+    private final float omegaHalfCos;
     private final float radio;
     private final float radioSquare;
 
@@ -34,6 +36,8 @@ public class Angular extends Projection {
       super(c, W, H);
 
       this.omega = omega;
+      omegaHalf = omega * 0.5f;
+      omegaHalfCos = (float) Math.cos(omegaHalf);
       radio = (float) Math.sin(omega * 0.5f);
       radioSquare = radio * radio;
     }
@@ -56,7 +60,7 @@ public class Angular extends Projection {
       } else {
         // Definimos z en función de la ecuación de la esfera que define el
         // casquete de proyección
-        final float z = (float) (Math.cos(omega / 2) - Math.sqrt(1 - dSquare));
+        final float z = (float) (omegaHalfCos - Math.sqrt(1 - dSquare));
 
         Q = new Point3D(x, y, z);
         camera.toSceneCoord(Q);
