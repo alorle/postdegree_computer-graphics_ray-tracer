@@ -47,7 +47,7 @@ public class Sphere extends Object3D {
 
         if (dSign == 0) {
           // Rayo tangente a la esfera
-          float t = b;
+          final float t = b;
           final Point3D P = ray.pointAtParameter(t);
           final Vector3D normal = new Vector3D(C, P);
           normal.normalize();
@@ -73,7 +73,13 @@ public class Sphere extends Object3D {
       return Hit.NOHIT;
     } else if (c < 0) {
       // Punto de origen dentro de la esfera
-      throw new UnsupportedOperationException("Not implemented yet.");
+      final float b = RC.dot(v);
+      final float t = b + (float) Math.sqrt(4 * b * b - 4 * c) * 0.5f;
+      final Point3D P = ray.pointAtParameter(t);
+      final Vector3D normal = new Vector3D(C, P);
+      normal.normalize();
+
+      return new Hit(t, P, normal, this);
     }
 
     // Punto de origen en la superficie de la esfera
