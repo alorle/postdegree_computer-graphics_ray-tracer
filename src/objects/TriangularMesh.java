@@ -79,7 +79,7 @@ public class TriangularMesh extends Object3D {
 
     for (final Triangle triangle : triangles) {
       final Hit lastHit = triangle.intersects(ray);
-      if (lastHit.isCloser(closestHit)) {
+      if (lastHit.hits() && lastHit.isCloser(closestHit)) {
         closestHit = lastHit;
       }
     }
