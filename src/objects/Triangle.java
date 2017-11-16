@@ -51,10 +51,38 @@ public class Triangle extends Object3D {
   }
 
   @Override
-  protected Hit _intersects(final Ray r) {
+  protected Hit _intersects(final Ray ray) {
+    final Point3D R = ray.getStartingPoint();
+    final Vector3D v = ray.getDirection();
 
+    final float c = v.dot(normal);
+    if (c < 0) {
+      // Rayo entra por la cara exterior
+      final Vector3D AR = new Vector3D(A, R);
+      final float b = AR.dot(normal);
+
+      if (b >= 0) {
+        // Intersección en semiespacio posterior (visible)
+        final float dd = (float) (factorM / c);
+        final float bb = AC.dot(v.cross(AR)) * dd;
+
+        if (bb >= 0 && bb <= 1) {
+          final float cc = -(AB.dot(v.cross(AR)) * dd);
+
+          if (cc >= 0 && cc <= 1 && (bb + cc) <= 1) {
+            final float a = -b / c;
+            return new Hit(a, ray.pointAtParameter(a), normal, this);
+          }
+        }
+      }
+    }
+
+    // Llegados aquí:
+    // - Rayo entra por la cara posterior del triángulo
+    // - Rayo discurre paralelo al plano definido por el triángulo
+    // - El cruce se produce en el semiespacio anterior (oculto)
+    // - Rayo no intersecta por los valores de alpha, beta y gamma
     return Hit.NOHIT;
-
   }
 
   public final Vector3D getNormal() {
