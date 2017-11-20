@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.StringTokenizer;
 import javax.vecmath.Point2f;
+import objects.bounding.OrthoedricBoundingBox;
 
 import primitives.Vector3D;
 import primitives.Point3D;
@@ -22,6 +23,7 @@ import tracer.Ray;
 public class TriangularMesh extends Object3D {
 
   private final Collection<Triangle> triangles;
+  private final OrthoedricBoundingBox orthoedricBoundingBox;
 
   public TriangularMesh(final Map<Integer, Point3D> vertices,
           final List<String> facets,
@@ -71,16 +73,20 @@ public class TriangularMesh extends Object3D {
 
       return new Triangle(vertex0, vertex1, vertex2, _color);
     }).forEachOrdered(triangles::add);
+
+    orthoedricBoundingBox = new OrthoedricBoundingBox(vertices);
   }
 
   @Override
   protected Hit _intersects(final Ray ray) {
     Hit closestHit = Hit.NOHIT;
 
-    for (final Triangle triangle : triangles) {
-      final Hit lastHit = triangle.intersects(ray);
-      if (lastHit.hits() && lastHit.isCloser(closestHit)) {
-        closestHit = lastHit;
+    if (orthoedricBoundingBox.intersect(ray)) {
+      for (final Triangle triangle : triangles) {
+        final Hit lastHit = triangle.intersects(ray);
+        if (lastHit.hits() && lastHit.isCloser(closestHit)) {
+          closestHit = lastHit;
+        }
       }
     }
 
