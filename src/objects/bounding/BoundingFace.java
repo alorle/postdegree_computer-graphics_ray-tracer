@@ -22,8 +22,6 @@ public class BoundingFace extends Object3D {
   private final Point3D center;
   private final Vector3D normal;
 
-  private final Plane plane;
-
   private final float width;
   private final float heigth;
   private final float widthHalf;
@@ -57,8 +55,6 @@ public class BoundingFace extends Object3D {
         throw new RuntimeException("BoundingFace: unkown EclideanPlane");
     }
 
-    plane = new Plane(center, normal, null);
-
     widthHalf = width * 0.5f;
     heigthHalf = heigth * 0.5f;
   }
@@ -82,20 +78,22 @@ public class BoundingFace extends Object3D {
 
   @Override
   protected Hit _intersects(Ray ray) {
-    final float angle = normal.angle(ray.getDirection());
+    final float a = ray.getDirection().dot(normal);
 
-    if (angle > Math.PI * 0.5f && angle < Math.PI) {
+    if (a < 0) {
       // Rayo forma angulo obtuso con la cara, por lo que intersecta por su lado
       // visible
-      final Hit hit = plane.intersects(ray);
+      final float t = center.sub(ray.getStartingPoint()).dot(normal) / a;
 
-      if (hit.hits()) {
-        // Rayo intersecta con el plano que contiene la cara
-        final Point3D P = hit.getPoint();
+      if (t >= 0) {
+        // Intersección en semiespacio posterior
+        final Point3D P = ray.pointAtParameter(t);
 
         // Debemos revisar si el punto de intersección está dentro de los
         // límites de la cara
-        return (contains(P)) ? hit : Hit.NOHIT;
+        return (contains(P))
+                ? new Hit(t, P, normal, this)
+                : Hit.NOHIT;
       }
     }
 
