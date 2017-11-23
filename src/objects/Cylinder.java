@@ -74,17 +74,38 @@ public final class Cylinder extends Object3D {
           // Rayo intersecta con el cilindro infinito
           final float p = RB.cross(u).dot(crossVU) / crossVU2;
           final float s = (float) Math.sqrt(k2 / crossVU2);
-          final float t = p - s;
+          final float tIn = p - s;
 
-          if (Math.signum(t) > 0) {
+          if (Math.signum(tIn) > 0) {
             // Intersección en semiespacio posterior
-            final Point3D P = ray.pointAtParameter(t);
-            final Vector3D normal = new Vector3D(B, P);
-            return new Hit(t, P, normal, this);
+            final Point3D Pin = ray.pointAtParameter(tIn);
+
+            // Debemos comprobar si la distancia paralela a u entre P y B es
+            // menor que L/2
+            final Vector3D PinB = new Vector3D(Pin, B);
+            final float aIn = PinB.dot(u);
+
+            if (Math.signum(halfL - Math.abs(aIn)) > 0) {
+              return new Hit(tIn, Pin,
+                      new Vector3D(Pin, ray.pointAtParameter(aIn)), this);
+            }
+
+            // Aún puede intersectar por las tapas. En este caso, tendríamos que
+            // punto de salida del rayo está al otro lado de la tapa con la que
+            // intersecte, por lo que bastaría con mirar que el punto del rayo
+            // con alpha = p + s está al otro lado del plano que define la tapa.
+            final float tOut = p + s;
+            final Point3D Pout = ray.pointAtParameter(tOut);
+
+            final Vector3D PoutB = new Vector3D(Pout, B);
+            final float aOut = PoutB.dot(u);
+
+            if (Math.signum(halfL - Math.abs(aOut)) > 0) {
+              return new Hit(aOut, Pout,
+                      new Vector3D(Pout, ray.pointAtParameter(aOut)), this);
+            }
           }
         }
-
-        //
       }
     } else {
       // Punto de partida del rayo en el interior del cilindro infinito
