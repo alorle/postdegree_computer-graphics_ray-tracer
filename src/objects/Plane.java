@@ -38,13 +38,13 @@ public final class Plane extends Object3D {
   protected Hit _intersects(final Ray ray) {
     final float a = ray.getDirection().dot(normal);
 
-    if (a != 0) {
+    if (Math.signum(a) != 0) {
       // Rayo no paralelo al plano
       final Vector3D QP = new Vector3D(ray.getStartingPoint(), P);
 
       // Intersección por un lado del plano
       final float t = QP.dot(normal) / a;
-      if (t >= 0) {
+      if (Math.signum(t) >= 0) {
         // Intersección en semiespacio posterior
         return new Hit(t, ray.pointAtParameter(t),
                 (a > 0) ? normalOpposite : normal,

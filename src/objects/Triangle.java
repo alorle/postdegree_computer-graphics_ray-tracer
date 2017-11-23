@@ -56,20 +56,20 @@ public class Triangle extends Object3D {
     final Vector3D v = ray.getDirection();
 
     final float c = v.dot(normal);
-    if (c < 0) {
+    if (Math.signum(c) < 0) {
       // Rayo entra por la cara exterior
       final Vector3D AR = new Vector3D(A, R);
       final float b = AR.dot(normal);
 
-      if (b >= 0) {
+      if (Math.signum(b) >= 0) {
         // Intersección en semiespacio posterior (visible)
         final float dd = (float) (factorM / c);
         final float bb = AC.dot(v.cross(AR)) * dd;
 
-        if (bb >= 0 && bb <= 1) {
+        if (Math.signum(bb) >= 0 && bb <= 1) {
           final float cc = -(AB.dot(v.cross(AR)) * dd);
 
-          if (cc >= 0 && cc <= 1 && (bb + cc) <= 1) {
+          if (Math.signum(cc) >= 0 && cc <= 1 && (bb + cc) <= 1) {
             final float a = -b / c;
             return new Hit(a, ray.pointAtParameter(a), normal, this);
           }

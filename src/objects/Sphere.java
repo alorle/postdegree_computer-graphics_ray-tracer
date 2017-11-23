@@ -34,18 +34,18 @@ public class Sphere extends Object3D {
     final Vector3D RC = new Vector3D(R, C);
 
     final float c = RC.dot(RC) - r * r;
-    if (c > 0) {
+    if (Math.signum(c) > 0) {
       // Punto origen del rayo, R, fuera de la esfera
       final float b = RC.dot(v);
       final float bSquare = b * b;
 
-      if (b > 0) {
+      if (Math.signum(b) > 0) {
         // Centro C de la esfera en semiespacio posterior, puede existir
         // intersección
         final float d = (float) Math.sqrt(bSquare - c);
         final float dSign = Math.signum(d);
 
-        if (dSign == 0) {
+        if (Math.signum(dSign) == 0) {
           // Rayo tangente a la esfera
           final float t = b;
           final Point3D P = ray.pointAtParameter(t);
@@ -53,7 +53,7 @@ public class Sphere extends Object3D {
           normal.normalize();
 
           return new Hit(t, P, normal, this);
-        } else if (dSign > 0) {
+        } else if (Math.signum(dSign) > 0) {
           // Rayo secante a la esfera
           final float tp = b + d;
           final float tm = c / tp;
