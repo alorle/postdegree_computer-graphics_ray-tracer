@@ -54,35 +54,37 @@ public final class Cylinder extends Object3D {
     final Vector3D v = ray.getDirection();
 
     final Vector3D RB = new Vector3D(R, B);
+    final float RBdotU = RB.dot(u);
 
-    final float d2 = RB.dot(RB) - (RB.dot(u)) * (RB.dot(u));
+    final float d2 = RB.dot(RB) - (RBdotU * RBdotU);
 
-    if (d2 > r2) {
+    if (Math.signum(d2 - r2) > 0) {
       // Punto de partida del rayo en el exterior del cilindro infinito
       final Vector3D crossVU = v.cross(u);
       final float crossVU2 = crossVU.dot(crossVU);
       final float crossVUMag = crossVU.length();
       final float crossVUMagInv = 1 / crossVUMag;
-      final float crossVUMag2 = crossVUMag * crossVUMag;
 
-      if (crossVUMag2 == crossVU2) {
+      if (Math.signum(crossVU2) != 0) {
         // Rayo no paralelo al eje del cilindro
         final float d = crossVUMagInv * RB.dot(crossVU);
 
         final float k2 = r2 - d * d;
-        if (k2 >= 0) {
+        if (Math.signum(k2) >= 0) {
           // Rayo intersecta con el cilindro infinito
           final float p = RB.cross(u).dot(crossVU) / crossVU2;
           final float s = (float) Math.sqrt(k2 / crossVU2);
           final float t = p - s;
 
-          if (t > 0) {
+          if (Math.signum(t) > 0) {
             // Intersección en semiespacio posterior
             final Point3D P = ray.pointAtParameter(t);
             final Vector3D normal = new Vector3D(B, P);
             return new Hit(t, P, normal, this);
           }
         }
+
+        //
       }
     } else {
       // Punto de partida del rayo en el interior del cilindro infinito
