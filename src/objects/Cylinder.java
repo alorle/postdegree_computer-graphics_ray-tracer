@@ -83,11 +83,11 @@ public final class Cylinder extends Object3D {
             // Debemos comprobar si la distancia paralela a u entre P y B es
             // menor que L/2
             final Vector3D PinB = new Vector3D(Pin, B);
-            final float aIn = PinB.dot(u);
+            final float dIn = PinB.dot(u);
 
-            if (Math.signum(halfL - Math.abs(aIn)) > 0) {
+            if (Math.signum(halfL - Math.abs(dIn)) > 0) {
               return new Hit(tIn, Pin,
-                      new Vector3D(Pin, ray.pointAtParameter(aIn)), this);
+                      new Vector3D(Pin, ray.pointAtParameter(dIn)), this);
             }
 
             // Aún puede intersectar por las tapas. En este caso, tendríamos que
@@ -98,11 +98,26 @@ public final class Cylinder extends Object3D {
             final Point3D Pout = ray.pointAtParameter(tOut);
 
             final Vector3D PoutB = new Vector3D(Pout, B);
-            final float aOut = PoutB.dot(u);
+            final float dOut = PoutB.dot(u);
 
-            if (Math.signum(halfL - Math.abs(aOut)) > 0) {
-              return new Hit(aOut, Pout,
-                      new Vector3D(Pout, ray.pointAtParameter(aOut)), this);
+            if (Math.signum(halfL + dOut) > 0 && Math.signum(dIn) < 0) {
+              // Rayo intersecta con tapa delantera (siguiendo el sentido de u)
+              final float a = v.dot(u);
+              final Vector3D RTapa = new Vector3D(R, B.add(halfL, u));
+              final float t = RTapa.dot(u) / a;
+
+              if (Math.signum(t) >= 0) {
+                return new Hit(t, ray.pointAtParameter(t), u, this);
+              }
+            } else if (Math.signum(halfL - dOut) > 0 && Math.signum(dIn) > 0) {
+              // Rayo intersecta con tapa trasera (siguiendo el sentido de u)
+              final float a = v.dot(u_opposite);
+              final Vector3D RTapa = new Vector3D(R, B.add(halfL, u_opposite));
+              final float t = RTapa.dot(u_opposite) / a;
+
+              if (Math.signum(t) >= 0) {
+                return new Hit(t, ray.pointAtParameter(t), u_opposite, this);
+              }
             }
           }
         }
