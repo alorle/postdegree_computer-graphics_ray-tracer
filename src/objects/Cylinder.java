@@ -102,18 +102,16 @@ public final class Cylinder extends Object3D {
 
             if (Math.signum(halfL + dOut) > 0 && Math.signum(dIn) < 0) {
               // Rayo intersecta con tapa delantera (siguiendo el sentido de u)
-              final float a = v.dot(u);
               final Vector3D RTapa = new Vector3D(R, B.add(halfL, u));
-              final float t = RTapa.dot(u) / a;
+              final float t = RTapa.dot(u) / v.dot(u);
 
               if (Math.signum(t) >= 0) {
                 return new Hit(t, ray.pointAtParameter(t), u, this);
               }
             } else if (Math.signum(halfL - dOut) > 0 && Math.signum(dIn) > 0) {
               // Rayo intersecta con tapa trasera (siguiendo el sentido de u)
-              final float a = v.dot(u_opposite);
               final Vector3D RTapa = new Vector3D(R, B.add(halfL, u_opposite));
-              final float t = RTapa.dot(u_opposite) / a;
+              final float t = RTapa.dot(u_opposite) / v.dot(u_opposite);
 
               if (Math.signum(t) >= 0) {
                 return new Hit(t, ray.pointAtParameter(t), u_opposite, this);
@@ -124,6 +122,64 @@ public final class Cylinder extends Object3D {
       }
     } else {
       // Punto de partida del rayo en el interior del cilindro infinito
+
+      if (Math.signum(Math.abs(RBdotU) - halfL) > 0) {
+        // Punto de partida del rayo fuera del cilindro finito, por lo que
+        // solo podrá intersectar con una tapa
+        final Vector3D n = Math.signum(RBdotU) < 0 ? u : u_opposite;
+        final Point3D c = B.add(halfL, n);
+        final Plane p = new Plane(c, n, color);
+        final Hit hit = p.intersects(ray);
+
+        if (Math.signum(r2 - hit.getPoint().distanceSquared(c)) >= 0) {
+          return hit;
+        }
+      } else {
+        // Punto de partida del rayo dentro del cilindro infinito, por lo que
+        // puede intersectar con la pared o con una tapa
+        final Vector3D crossVU = v.cross(u);
+        final float crossVU2 = crossVU.dot(crossVU);
+
+        if (Math.signum(crossVU2) != 0) {
+          // Rayo no paralelo al eje del cilindro
+          final float crossVUMag = crossVU.length();
+          final float crossVUMagInv = 1 / crossVUMag;
+          final float d = crossVUMagInv * RB.dot(crossVU);
+
+          final float k2 = r2 - d * d;
+          final float p = RB.cross(u).dot(crossVU) / crossVU2;
+          final float s = (float) Math.sqrt(k2 / crossVU2);
+          final float tOut = p + s;
+          final Point3D Pout = ray.pointAtParameter(tOut);
+
+          final Vector3D PoutB = new Vector3D(Pout, B);
+          final float dOut = PoutB.dot(u);
+
+          if (Math.signum(halfL - Math.abs(dOut)) > 0) {
+            // Rayo sale del cilindro por la pared del cilindro
+            return new Hit(tOut, Pout,
+                    new Vector3D(ray.pointAtParameter(dOut), Pout), this);
+          } else {
+            // Rayo sale del cilindro por una tapa
+            final Vector3D n = Math.signum(RBdotU) > 0 ? u : u_opposite;
+            final Vector3D RTapa = new Vector3D(R, B.add(halfL, n));
+            final float t = RTapa.dot(n) / v.dot(n);
+
+            if (Math.signum(t) >= 0) {
+              return new Hit(t, ray.pointAtParameter(t), n, this);
+            }
+          }
+        } else {
+          // Rayo paralelo al eje del cilindro
+          final Vector3D n = Math.signum(RBdotU) < 0 ? u : u_opposite;
+          final Vector3D RTapa = new Vector3D(R, B.add(halfL, n));
+          final float t = RTapa.dot(n) / v.dot(n);
+
+          if (Math.signum(t) >= 0) {
+            return new Hit(t, ray.pointAtParameter(t), n, this);
+          }
+        }
+      }
     }
 
     return Hit.NOHIT;
