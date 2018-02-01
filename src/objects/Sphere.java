@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import primitives.Point3D;
 import primitives.Vector3D;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 
@@ -22,6 +23,11 @@ public class Sphere extends Object3D {
   public Sphere(final Point3D centro, final float radio, final Color color) {
     this(centro, radio);
     this.color = color;
+  }
+
+  public Sphere(final Point3D centro, final float radio, final Material material) {
+    this(centro, radio);
+    this.material = material;
   }
 
   @Override

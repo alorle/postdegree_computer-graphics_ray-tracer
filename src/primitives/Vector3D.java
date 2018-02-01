@@ -2,7 +2,7 @@ package primitives;
 
 import javax.vecmath.Vector3f;
 
-public final class Vector3D extends Vector3f {
+public class Vector3D extends Vector3f {
 
   public Vector3D(final float x, final float y, final float z) {
     super(x, y, z);
@@ -81,7 +81,7 @@ public final class Vector3D extends Vector3f {
 
   @Override
   public String toString() {
-    return "(" + getX() + "," + getX() + "," + getZ() + ")";
+    return "<" + getX() + "," + getY() + "," + getZ() + ">";
   }
 
 }

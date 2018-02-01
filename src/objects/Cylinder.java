@@ -7,6 +7,7 @@ package objects;
 import java.awt.Color;
 import primitives.Vector3D;
 import primitives.Point3D;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 
@@ -38,6 +39,22 @@ public final class Cylinder extends Object3D {
           final float L,
           final Color color) {
     super(color);
+    this.B = B;
+    this.u = u;
+    this.u_opposite = u.opposite();
+    this.halfL = L * 0.5f;
+    this.r = r;
+    this.r2 = r * r;
+    this.rinv = (float) (1.0 / r);
+    this.d2max = r2 + halfL * halfL;
+  }
+
+  public Cylinder(final Point3D B,
+          final Vector3D u,
+          final float r,
+          final float L,
+          final Material material) {
+    super(material);
     this.B = B;
     this.u = u;
     this.u_opposite = u.opposite();

@@ -1,4 +1,4 @@
-package objects.bounding;
+package objects.boundingboxes;
 
 import tracer.Ray;
 

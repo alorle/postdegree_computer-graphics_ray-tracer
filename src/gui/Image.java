@@ -1,5 +1,11 @@
 package gui;
 
+/**
+ *
+ * La definición de esta clase está completa
+ *
+ * @author MAZ
+ */
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
@@ -8,8 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import view.Camera;
+import lights.LightGroup;
 import objects.Group3D;
 import objects.Object3D;
+import primitives.Point3D;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 import tracer.RayGenerator;
@@ -98,6 +107,48 @@ public class Image {
 
   }
 
+  public void synthesis(final Camera camera, final Group3D scene, final LightGroup lights) {
+
+    final int W = getWidth();
+    final int H = getHeight();
+    final Color background = getBackgroundColor();
+
+    final RayGenerator rg = camera.getRayGenerator(W, H);
+
+    for (int m = 0; m < W; ++m) {
+
+      for (int n = 0; n < H; ++n) {
+
+        // Calcula radiancia directa desde fuentes de luz
+        // Calcula haz de direcciones para radiancia indirecta
+        // Calcula radiancia reflejada desde haz de direcciones
+        // Suma componentes de radiancia y calcula color
+        final Ray ray = rg.getRay(m, n);
+
+        if (ray.isOperative()) {
+
+          final Hit hit = scene.intersects(ray);
+
+          if (hit.hits()) {
+
+            final Point3D P = ray.getStartingPoint();
+            final Material material = hit.getMaterial();
+            putPixel(m, n, material.getColor(scene, lights, hit, P));
+
+          } else {
+            putPixel(m, n, background);
+          }
+
+        } else {
+          putPixel(m, n, Color.WHITE);
+        }
+
+      }
+
+    }
+
+  }
+
   public void putPixel(final int m, final int n, final Color c) {
     mosaic.setRGB(m, height - 1 - n, c.getRGB());
   }
@@ -110,6 +161,7 @@ public class Image {
 
     final JFrame frame = new JFrame(this.getTag());
     frame.getContentPane().setLayout(new FlowLayout());
+
     frame.getContentPane().add(new JLabel(new ImageIcon(mosaic)));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.pack();

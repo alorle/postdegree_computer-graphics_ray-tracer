@@ -1,0 +1,935 @@
+<?xml version="1.0"?>
+<image name="oloid256c">
+
+  <viewport>
+    <width>1000</width>
+    <height>1000</height>
+    <backgroundColor>0.2 0.2 0.2</backgroundColor>
+  </viewport>
+  
+  <camera>
+    <position>8.0 11.5 5.0</position>
+    <lookAt>0.0 1.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+    <fov>40.0</fov>
+    <aspect>1</aspect>
+  </projection> 
+
+  <lights>
+    <light type="ambiental">
+      <spectrum>0.33 0.33 0.34</spectrum>
+      <power>0.175</power>
+    </light>
+      
+    <light type="omnidirectional">
+      <position>-1.0 20.0 -4.0</position>
+      <spectrum>0.33 0.33 0.34</spectrum>
+      <power>2500</power>
+    </light>
+
+    <light type="spot">
+      <position>100.0 5.0 100.0</position>
+      <lookAt>0.0 0.50 0.0</lookAt>
+      <aperture>60</aperture>
+      <attenuationExponent>3.5</attenuationExponent>
+      <spectrum>0.34 0.33 0.33</spectrum>
+      <power>2500</power>
+    </light>
+
+    <light type="directional">
+      <position>25.0 15.0 -25.0</position>
+      <lookAt>0.0 0.50 0.0</lookAt>
+      <radius>15</radius>
+      <spectrum>0.34 0.33 0.33</spectrum>
+      <power>5000</power>        
+      <attenuationExponent>7.5</attenuationExponent>
+    </light>
+
+  </lights>
+
+  <materials>
+    <material id="gold" type="Ashikmin-Shirley">
+      <diffuseFilter>0.70 0.15 0.0</diffuseFilter>
+      <specularFilter>0.30 0.30 0.0</specularFilter>      
+      <specularRecursion>YES</specularRecursion>
+      <densityFunction>Blinn</densityFunction>
+      <beta>45</beta>
+    </material>
+    
+    <material id="floor" type="Phong-Lafortune">     
+      <ambientFilter>1.0 1.0 1.0</ambientFilter>        
+      <diffuseFilter>0.1 0.40 0.6</diffuseFilter>
+      <specularFilter>0.10 0.10 0.10</specularFilter>
+      <specularRecursion>NO</specularRecursion>
+      <densityFunction>Blinn</densityFunction>      
+      <beta>60</beta>                        
+    </material>
+      
+    <material id="pink" type="Phong-Lafortune">
+      <ambientFilter>1.0 1.0 1.0</ambientFilter>        
+      <diffuseFilter>0.95 0.30 0.30</diffuseFilter>
+      <specularFilter>0.05 0.10 0.10</specularFilter>
+      <specularRecursion>YES</specularRecursion>
+      <densityFunction>Torrance2</densityFunction>
+      <beta>12.5</beta>                        
+    </material>
+  
+    <material id="white-mirror" type="Ashikmin-Shirley">        
+      <diffuseFilter>0.0 0.0 0.0</diffuseFilter>
+      <specularFilter>1.0 1.0 1.0</specularFilter>      
+      <specularRecursion>YES</specularRecursion>
+      <densityFunction>Torrance2</densityFunction>
+      <beta>0.5</beta>
+    </material>
+      
+    <material id="green-mirror" type="Ashikmin-Shirley">        
+      <diffuseFilter>0.1 0.1 0.1</diffuseFilter>
+      <specularFilter>0.3 0.8 0.3</specularFilter>          
+      <specularRecursion>NO</specularRecursion>
+      <densityFunction>Blinn</densityFunction> 
+      <beta>27.5</beta>
+    </material>      
+  </materials>  
+
+  <scene>
+    <object id="floor" type="plane">
+      <point>0.0 -1.0 0.0</point>
+      <normal>0.0 1.0 0.0</normal>
+      <shaderId>floor</shaderId>
+    </object>
+      
+    <object type="sphere">
+      <center>-2.0 1.5 2.0</center>
+      <radius>1.8</radius>
+      <shaderId>white-mirror</shaderId>
+    </object>
+
+    <object type="sphere">
+      <center>2.0 1.5 -2.0</center>
+      <radius>1.8</radius>
+      <shaderId>pink</shaderId>
+    </object>      
+
+    <object id="oloid" type="triangular">
+      <shaderId>gold</shaderId>
+      <vertices>
+        <vertex>0.0 -1.0 0.0</vertex>
+        <vertex>0.0 0.5 0.866025</vertex>
+        <vertex>0.0 0.5 -0.866025</vertex>
+        <vertex>0.0898721 -0.995953 0.0</vertex>
+        <vertex>-0.0898721 -0.995953 0.0</vertex>
+        <vertex>0.0 0.501014 0.86661</vertex>
+        <vertex>0.0 0.501014 -0.86661</vertex>
+        <vertex>0.172345 -0.985037 0.0</vertex>
+        <vertex>-0.172345 -0.985037 0.0</vertex>
+        <vertex>0.0 0.503769 0.868191</vertex>
+        <vertex>0.0 0.503769 -0.868191</vertex>
+        <vertex>0.249354 -0.968412 0.0</vertex>
+        <vertex>-0.249354 -0.968412 0.0</vertex>
+        <vertex>0.0 0.508024 0.870609</vertex>
+        <vertex>0.0 0.508024 -0.870609</vertex>
+        <vertex>0.321439 -0.94693 0.0</vertex>
+        <vertex>-0.321439 -0.94693 0.0</vertex>
+        <vertex>0.0 0.513629 0.873752</vertex>
+        <vertex>0.0 0.513629 -0.873752</vertex>
+        <vertex>0.38887 -0.921293 0.0</vertex>
+        <vertex>-0.38887 -0.921293 0.0</vertex>
+        <vertex>0.0 0.520483 0.877533</vertex>
+        <vertex>0.0 0.520483 -0.877533</vertex>
+        <vertex>0.451825 -0.892107 0.0</vertex>
+        <vertex>-0.451825 -0.892107 0.0</vertex>
+        <vertex>0.0 0.528511 0.881872</vertex>
+        <vertex>0.0 0.528511 -0.881872</vertex>
+        <vertex>0.510447 -0.859909 0.0</vertex>
+        <vertex>-0.510447 -0.859909 0.0</vertex>
+        <vertex>0.0 0.537661 0.886703</vertex>
+        <vertex>0.0 0.537661 -0.886703</vertex>
+        <vertex>0.564872 -0.825179 0.0</vertex>
+        <vertex>-0.564872 -0.825179 0.0</vertex>
+        <vertex>0.0 0.547892 0.891963</vertex>
+        <vertex>0.0 0.547892 -0.891963</vertex>
+        <vertex>0.615232 -0.788346 0.0</vertex>
+        <vertex>-0.615232 -0.788346 0.0</vertex>
+        <vertex>0.0 0.559176 0.897593</vertex>
+        <vertex>0.0 0.559176 -0.897593</vertex>
+        <vertex>0.661663 -0.749801 0.0</vertex>
+        <vertex>-0.661663 -0.749801 0.0</vertex>
+        <vertex>0.0 0.571493 0.903539</vertex>
+        <vertex>0.0 0.571493 -0.903539</vertex>
+        <vertex>0.704308 -0.709895 0.0</vertex>
+        <vertex>-0.704308 -0.709895 0.0</vertex>
+        <vertex>0.0 0.584831 0.909744</vertex>
+        <vertex>0.0 0.584831 -0.909744</vertex>
+        <vertex>0.743313 -0.668943 0.0</vertex>
+        <vertex>-0.743313 -0.668943 0.0</vertex>
+        <vertex>0.0 0.599181 0.916157</vertex>
+        <vertex>0.0 0.599181 -0.916157</vertex>
+        <vertex>0.778831 -0.627234 0.0</vertex>
+        <vertex>-0.778831 -0.627234 0.0</vertex>
+        <vertex>0.0 0.61454 0.922724</vertex>
+        <vertex>0.0 0.61454 -0.922724</vertex>
+        <vertex>0.811017 -0.585023 0.0</vertex>
+        <vertex>-0.811017 -0.585023 0.0</vertex>
+        <vertex>0.0 0.630906 0.929392</vertex>
+        <vertex>0.0 0.630906 -0.929392</vertex>
+        <vertex>0.840028 -0.542543 0.0</vertex>
+        <vertex>-0.840028 -0.542543 0.0</vertex>
+        <vertex>0.0 0.64828 0.936105</vertex>
+        <vertex>0.0 0.64828 -0.936105</vertex>
+        <vertex>0.866025 -0.5 0.0</vertex>
+        <vertex>-0.866025 -0.5 0.0</vertex>
+        <vertex>0.0 0.666667 0.942809</vertex>
+        <vertex>0.0 0.666667 -0.942809</vertex>
+        <vertex>0.889169 -0.457579 0.0</vertex>
+        <vertex>-0.889169 -0.457579 0.0</vertex>
+        <vertex>0.0 0.686069 0.949446</vertex>
+        <vertex>0.0 0.686069 -0.949446</vertex>
+        <vertex>0.909619 -0.415444 0.0</vertex>
+        <vertex>-0.909619 -0.415444 0.0</vertex>
+        <vertex>0.0 0.706492 0.955957</vertex>
+        <vertex>0.0 0.706492 -0.955957</vertex>
+        <vertex>0.927534 -0.37374 0.0</vertex>
+        <vertex>-0.927534 -0.37374 0.0</vertex>
+        <vertex>0.0 0.72794 0.96228</vertex>
+        <vertex>0.0 0.72794 -0.96228</vertex>
+        <vertex>0.94307 -0.332594 0.0</vertex>
+        <vertex>-0.94307 -0.332594 0.0</vertex>
+        <vertex>0.0 0.750416 0.968353</vertex>
+        <vertex>0.0 0.750416 -0.968353</vertex>
+        <vertex>0.956383 -0.292117 0.0</vertex>
+        <vertex>-0.956383 -0.292117 0.0</vertex>
+        <vertex>0.0 0.773924 0.97411</vertex>
+        <vertex>0.0 0.773924 -0.97411</vertex>
+        <vertex>0.967622 -0.252406 0.0</vertex>
+        <vertex>-0.967622 -0.252406 0.0</vertex>
+        <vertex>0.0 0.798463 0.979481</vertex>
+        <vertex>0.0 0.798463 -0.979481</vertex>
+        <vertex>0.976934 -0.213543 0.0</vertex>
+        <vertex>-0.976934 -0.213543 0.0</vertex>
+        <vertex>0.0 0.824033 0.984396</vertex>
+        <vertex>0.0 0.824033 -0.984396</vertex>
+        <vertex>0.984462 -0.175599 0.0</vertex>
+        <vertex>-0.984462 -0.175599 0.0</vertex>
+        <vertex>0.0 0.85063 0.988781</vertex>
+        <vertex>0.0 0.85063 -0.988781</vertex>
+        <vertex>0.990344 -0.138633 0.0</vertex>
+        <vertex>-0.990344 -0.138633 0.0</vertex>
+        <vertex>0.0 0.878246 0.99256</vertex>
+        <vertex>0.0 0.878246 -0.99256</vertex>
+        <vertex>0.994713 -0.102694 0.0</vertex>
+        <vertex>-0.994713 -0.102694 0.0</vertex>
+        <vertex>0.0 0.90687 0.995654</vertex>
+        <vertex>0.0 0.90687 -0.995654</vertex>
+        <vertex>0.997698 -0.0678203 0.0</vertex>
+        <vertex>-0.997698 -0.0678203 0.0</vertex>
+        <vertex>0.0 0.936487 0.997981</vertex>
+        <vertex>0.0 0.936487 -0.997981</vertex>
+        <vertex>0.99942 -0.0340443 0.0</vertex>
+        <vertex>-0.99942 -0.0340443 0.0</vertex>
+        <vertex>0.0 0.967077 0.999458</vertex>
+        <vertex>0.0 0.967077 -0.999458</vertex>
+        <vertex>0.999999 -0.001389 0.0</vertex>
+        <vertex>-0.999999 -0.001389 0.0</vertex>
+        <vertex>0.0 0.998613 0.999999</vertex>
+        <vertex>0.0 0.998613 -0.999999</vertex>
+        <vertex>0.999546 0.0301288 0.0</vertex>
+        <vertex>-0.999546 0.0301288 0.0</vertex>
+        <vertex>0.0 1.03106 0.999517</vertex>
+        <vertex>0.0 1.03106 -0.999517</vertex>
+        <vertex>0.998168 0.0604985 0.0</vertex>
+        <vertex>-0.998168 0.0604985 0.0</vertex>
+        <vertex>0.0 1.06439 0.997925</vertex>
+        <vertex>0.0 1.06439 -0.997925</vertex>
+        <vertex>0.995968 0.0897146 0.0</vertex>
+        <vertex>-0.995968 0.0897146 0.0</vertex>
+        <vertex>0.0 1.09856 0.995131</vertex>
+        <vertex>0.0 1.09856 -0.995131</vertex>
+        <vertex>0.99304 0.117777 0.0</vertex>
+        <vertex>-0.99304 0.117777 0.0</vertex>
+        <vertex>0.0 1.1335 0.991049</vertex>
+        <vertex>0.0 1.1335 -0.991049</vertex>
+        <vertex>0.989477 0.144688 0.0</vertex>
+        <vertex>-0.989477 0.144688 0.0</vertex>
+        <vertex>0.0 1.16916 0.985588</vertex>
+        <vertex>0.0 1.16916 -0.985588</vertex>
+        <vertex>0.985365 0.170456 0.0</vertex>
+        <vertex>-0.985365 0.170456 0.0</vertex>
+        <vertex>0.0 1.20548 0.978661</vertex>
+        <vertex>0.0 1.20548 -0.978661</vertex>
+        <vertex>0.980785 0.19509 0.0</vertex>
+        <vertex>-0.980785 0.19509 0.0</vertex>
+        <vertex>0.0 1.24238 0.970183</vertex>
+        <vertex>0.0 1.24238 -0.970183</vertex>
+        <vertex>0.975814 0.218605 0.0</vertex>
+        <vertex>-0.975814 0.218605 0.0</vertex>
+        <vertex>0.0 1.27976 0.960069</vertex>
+        <vertex>0.0 1.27976 -0.960069</vertex>
+        <vertex>0.970522 0.241014 0.0</vertex>
+        <vertex>-0.970522 0.241014 0.0</vertex>
+        <vertex>0.0 1.31755 0.948243</vertex>
+        <vertex>0.0 1.31755 -0.948243</vertex>
+        <vertex>0.964977 0.262335 0.0</vertex>
+        <vertex>-0.964977 0.262335 0.0</vertex>
+        <vertex>0.0 1.35563 0.934628</vertex>
+        <vertex>0.0 1.35563 -0.934628</vertex>
+        <vertex>0.959242 0.282586 0.0</vertex>
+        <vertex>-0.959242 0.282586 0.0</vertex>
+        <vertex>0.0 1.39389 0.919156</vertex>
+        <vertex>0.0 1.39389 -0.919156</vertex>
+        <vertex>0.953375 0.301787 0.0</vertex>
+        <vertex>-0.953375 0.301787 0.0</vertex>
+        <vertex>0.0 1.43223 0.901765</vertex>
+        <vertex>0.0 1.43223 -0.901765</vertex>
+        <vertex>0.947432 0.319959 0.0</vertex>
+        <vertex>-0.947432 0.319959 0.0</vertex>
+        <vertex>0.0 1.4705 0.882401</vertex>
+        <vertex>0.0 1.4705 -0.882401</vertex>
+        <vertex>0.941461 0.337122 0.0</vertex>
+        <vertex>-0.941461 0.337122 0.0</vertex>
+        <vertex>0.0 1.50857 0.861019</vertex>
+        <vertex>0.0 1.50857 -0.861019</vertex>
+        <vertex>0.93551 0.353299 0.0</vertex>
+        <vertex>-0.93551 0.353299 0.0</vertex>
+        <vertex>0.0 1.54631 0.837583</vertex>
+        <vertex>0.0 1.54631 -0.837583</vertex>
+        <vertex>0.929623 0.368511 0.0</vertex>
+        <vertex>-0.929623 0.368511 0.0</vertex>
+        <vertex>0.0 1.58356 0.812071</vertex>
+        <vertex>0.0 1.58356 -0.812071</vertex>
+        <vertex>0.923839 0.38278 0.0</vertex>
+        <vertex>-0.923839 0.38278 0.0</vertex>
+        <vertex>0.0 1.62017 0.784468</vertex>
+        <vertex>0.0 1.62017 -0.784468</vertex>
+        <vertex>0.918195 0.396128 0.0</vertex>
+        <vertex>-0.918195 0.396128 0.0</vertex>
+        <vertex>0.0 1.65598 0.754778</vertex>
+        <vertex>0.0 1.65598 -0.754778</vertex>
+        <vertex>0.912724 0.408576 0.0</vertex>
+        <vertex>-0.912724 0.408576 0.0</vertex>
+        <vertex>0.0 1.69083 0.723012</vertex>
+        <vertex>0.0 1.69083 -0.723012</vertex>
+        <vertex>0.907457 0.420145 0.0</vertex>
+        <vertex>-0.907457 0.420145 0.0</vertex>
+        <vertex>0.0 1.72457 0.689202</vertex>
+        <vertex>0.0 1.72457 -0.689202</vertex>
+        <vertex>0.902421 0.430855 0.0</vertex>
+        <vertex>-0.902421 0.430855 0.0</vertex>
+        <vertex>0.0 1.75702 0.653389</vertex>
+        <vertex>0.0 1.75702 -0.653389</vertex>
+        <vertex>0.897642 0.440726 0.0</vertex>
+        <vertex>-0.897642 0.440726 0.0</vertex>
+        <vertex>0.0 1.78803 0.615633</vertex>
+        <vertex>0.0 1.78803 -0.615633</vertex>
+        <vertex>0.893141 0.449777 0.0</vertex>
+        <vertex>-0.893141 0.449777 0.0</vertex>
+        <vertex>0.0 1.81744 0.576007</vertex>
+        <vertex>0.0 1.81744 -0.576007</vertex>
+        <vertex>0.888939 0.458026 0.0</vertex>
+        <vertex>-0.888939 0.458026 0.0</vertex>
+        <vertex>0.0 1.84511 0.5346</vertex>
+        <vertex>0.0 1.84511 -0.5346</vertex>
+        <vertex>0.885054 0.465489 0.0</vertex>
+        <vertex>-0.885054 0.465489 0.0</vertex>
+        <vertex>0.0 1.87087 0.491516</vertex>
+        <vertex>0.0 1.87087 -0.491516</vertex>
+        <vertex>0.8815 0.472184 0.0</vertex>
+        <vertex>-0.8815 0.472184 0.0</vertex>
+        <vertex>0.0 1.8946 0.446871</vertex>
+        <vertex>0.0 1.8946 -0.446871</vertex>
+        <vertex>0.878292 0.478125 0.0</vertex>
+        <vertex>-0.878292 0.478125 0.0</vertex>
+        <vertex>0.0 1.91617 0.400799</vertex>
+        <vertex>0.0 1.91617 -0.400799</vertex>
+        <vertex>0.87544 0.483326 0.0</vertex>
+        <vertex>-0.87544 0.483326 0.0</vertex>
+        <vertex>0.0 1.93546 0.353441</vertex>
+        <vertex>0.0 1.93546 -0.353441</vertex>
+        <vertex>0.872955 0.487801 0.0</vertex>
+        <vertex>-0.872955 0.487801 0.0</vertex>
+        <vertex>0.0 1.95237 0.304953</vertex>
+        <vertex>0.0 1.95237 -0.304953</vertex>
+        <vertex>0.870842 0.491562 0.0</vertex>
+        <vertex>-0.870842 0.491562 0.0</vertex>
+        <vertex>0.0 1.96681 0.2555</vertex>
+        <vertex>0.0 1.96681 -0.2555</vertex>
+        <vertex>0.869109 0.49462 0.0</vertex>
+        <vertex>-0.869109 0.49462 0.0</vertex>
+        <vertex>0.0 1.97871 0.205255</vertex>
+        <vertex>0.0 1.97871 -0.205255</vertex>
+        <vertex>0.86776 0.496984 0.0</vertex>
+        <vertex>-0.86776 0.496984 0.0</vertex>
+        <vertex>0.0 1.98801 0.154397</vertex>
+        <vertex>0.0 1.98801 -0.154397</vertex>
+        <vertex>0.866795 0.498664 0.0</vertex>
+        <vertex>-0.866795 0.498664 0.0</vertex>
+        <vertex>0.0 1.99467 0.10311</vertex>
+        <vertex>0.0 1.99467 -0.10311</vertex>
+        <vertex>0.866218 0.499667 0.0</vertex>
+        <vertex>-0.866218 0.499667 0.0</vertex>
+        <vertex>0.0 1.99867 0.0515814</vertex>
+        <vertex>0.0 1.99867 -0.0515814</vertex>
+        <vertex>0.866025 0.5 0.0</vertex>
+        <vertex>-0.866025 0.5 0.0</vertex>
+        <vertex>0.0 2.0 4.21468E-8</vertex>
+      </vertices>
+      <facets>
+        <facet>3 4 1</facet>
+        <facet>4 3 7</facet>
+        <facet>5 3 1</facet>
+        <facet>3 5 7</facet>
+        <facet>7 8 4</facet>
+        <facet>8 7 11</facet>
+        <facet>9 7 5</facet>
+        <facet>7 9 11</facet>
+        <facet>11 12 8</facet>
+        <facet>12 11 15</facet>
+        <facet>13 11 9</facet>
+        <facet>11 13 15</facet>
+        <facet>15 16 12</facet>
+        <facet>16 15 19</facet>
+        <facet>17 15 13</facet>
+        <facet>15 17 19</facet>
+        <facet>19 20 16</facet>
+        <facet>20 19 23</facet>
+        <facet>21 19 17</facet>
+        <facet>19 21 23</facet>
+        <facet>23 24 20</facet>
+        <facet>24 23 27</facet>
+        <facet>25 23 21</facet>
+        <facet>23 25 27</facet>
+        <facet>27 28 24</facet>
+        <facet>28 27 31</facet>
+        <facet>29 27 25</facet>
+        <facet>27 29 31</facet>
+        <facet>31 32 28</facet>
+        <facet>32 31 35</facet>
+        <facet>33 31 29</facet>
+        <facet>31 33 35</facet>
+        <facet>35 36 32</facet>
+        <facet>36 35 39</facet>
+        <facet>37 35 33</facet>
+        <facet>35 37 39</facet>
+        <facet>39 40 36</facet>
+        <facet>40 39 43</facet>
+        <facet>41 39 37</facet>
+        <facet>39 41 43</facet>
+        <facet>43 44 40</facet>
+        <facet>44 43 47</facet>
+        <facet>45 43 41</facet>
+        <facet>43 45 47</facet>
+        <facet>47 48 44</facet>
+        <facet>48 47 51</facet>
+        <facet>49 47 45</facet>
+        <facet>47 49 51</facet>
+        <facet>51 52 48</facet>
+        <facet>52 51 55</facet>
+        <facet>53 51 49</facet>
+        <facet>51 53 55</facet>
+        <facet>55 56 52</facet>
+        <facet>56 55 59</facet>
+        <facet>57 55 53</facet>
+        <facet>55 57 59</facet>
+        <facet>59 60 56</facet>
+        <facet>60 59 63</facet>
+        <facet>61 59 57</facet>
+        <facet>59 61 63</facet>
+        <facet>63 64 60</facet>
+        <facet>64 63 67</facet>
+        <facet>65 63 61</facet>
+        <facet>63 65 67</facet>
+        <facet>67 68 64</facet>
+        <facet>68 67 71</facet>
+        <facet>69 67 65</facet>
+        <facet>67 69 71</facet>
+        <facet>71 72 68</facet>
+        <facet>72 71 75</facet>
+        <facet>73 71 69</facet>
+        <facet>71 73 75</facet>
+        <facet>75 76 72</facet>
+        <facet>76 75 79</facet>
+        <facet>77 75 73</facet>
+        <facet>75 77 79</facet>
+        <facet>79 80 76</facet>
+        <facet>80 79 83</facet>
+        <facet>81 79 77</facet>
+        <facet>79 81 83</facet>
+        <facet>83 84 80</facet>
+        <facet>84 83 87</facet>
+        <facet>85 83 81</facet>
+        <facet>83 85 87</facet>
+        <facet>88 84 87</facet>
+        <facet>87 91 88</facet>
+        <facet>87 85 89</facet>
+        <facet>89 91 87</facet>
+        <facet>92 88 91</facet>
+        <facet>91 95 92</facet>
+        <facet>91 89 93</facet>
+        <facet>93 95 91</facet>
+        <facet>96 92 95</facet>
+        <facet>95 99 96</facet>
+        <facet>95 93 97</facet>
+        <facet>97 99 95</facet>
+        <facet>100 96 99</facet>
+        <facet>99 103 100</facet>
+        <facet>99 97 101</facet>
+        <facet>101 103 99</facet>
+        <facet>104 100 103</facet>
+        <facet>103 107 104</facet>
+        <facet>103 101 105</facet>
+        <facet>105 107 103</facet>
+        <facet>108 104 107</facet>
+        <facet>107 111 108</facet>
+        <facet>107 105 109</facet>
+        <facet>109 111 107</facet>
+        <facet>112 108 111</facet>
+        <facet>111 115 112</facet>
+        <facet>111 109 113</facet>
+        <facet>113 115 111</facet>
+        <facet>116 112 115</facet>
+        <facet>115 119 116</facet>
+        <facet>115 113 117</facet>
+        <facet>117 119 115</facet>
+        <facet>119 123 120</facet>
+        <facet>120 116 119</facet>
+        <facet>121 123 119</facet>
+        <facet>119 117 121</facet>
+        <facet>123 127 124</facet>
+        <facet>124 120 123</facet>
+        <facet>125 127 123</facet>
+        <facet>123 121 125</facet>
+        <facet>127 131 128</facet>
+        <facet>128 124 127</facet>
+        <facet>129 131 127</facet>
+        <facet>127 125 129</facet>
+        <facet>131 135 132</facet>
+        <facet>132 128 131</facet>
+        <facet>133 135 131</facet>
+        <facet>131 129 133</facet>
+        <facet>135 139 136</facet>
+        <facet>136 132 135</facet>
+        <facet>137 139 135</facet>
+        <facet>135 133 137</facet>
+        <facet>139 143 140</facet>
+        <facet>140 136 139</facet>
+        <facet>141 143 139</facet>
+        <facet>139 137 141</facet>
+        <facet>143 147 144</facet>
+        <facet>144 140 143</facet>
+        <facet>145 147 143</facet>
+        <facet>143 141 145</facet>
+        <facet>148 147 151</facet>
+        <facet>148 144 147</facet>
+        <facet>147 149 151</facet>
+        <facet>145 149 147</facet>
+        <facet>152 151 155</facet>
+        <facet>152 148 151</facet>
+        <facet>151 153 155</facet>
+        <facet>149 153 151</facet>
+        <facet>156 155 159</facet>
+        <facet>156 152 155</facet>
+        <facet>155 157 159</facet>
+        <facet>153 157 155</facet>
+        <facet>160 159 163</facet>
+        <facet>160 156 159</facet>
+        <facet>159 161 163</facet>
+        <facet>157 161 159</facet>
+        <facet>164 163 167</facet>
+        <facet>164 160 163</facet>
+        <facet>163 165 167</facet>
+        <facet>161 165 163</facet>
+        <facet>168 167 171</facet>
+        <facet>168 164 167</facet>
+        <facet>167 169 171</facet>
+        <facet>165 169 167</facet>
+        <facet>172 171 175</facet>
+        <facet>172 168 171</facet>
+        <facet>171 173 175</facet>
+        <facet>169 173 171</facet>
+        <facet>176 175 179</facet>
+        <facet>176 172 175</facet>
+        <facet>175 177 179</facet>
+        <facet>173 177 175</facet>
+        <facet>180 179 183</facet>
+        <facet>180 176 179</facet>
+        <facet>179 181 183</facet>
+        <facet>177 181 179</facet>
+        <facet>184 183 187</facet>
+        <facet>184 180 183</facet>
+        <facet>183 185 187</facet>
+        <facet>181 185 183</facet>
+        <facet>188 187 191</facet>
+        <facet>188 184 187</facet>
+        <facet>187 189 191</facet>
+        <facet>185 189 187</facet>
+        <facet>192 191 195</facet>
+        <facet>192 188 191</facet>
+        <facet>191 193 195</facet>
+        <facet>189 193 191</facet>
+        <facet>196 195 199</facet>
+        <facet>196 192 195</facet>
+        <facet>195 197 199</facet>
+        <facet>193 197 195</facet>
+        <facet>200 199 203</facet>
+        <facet>200 196 199</facet>
+        <facet>199 201 203</facet>
+        <facet>197 201 199</facet>
+        <facet>204 203 207</facet>
+        <facet>204 200 203</facet>
+        <facet>203 205 207</facet>
+        <facet>201 205 203</facet>
+        <facet>208 207 211</facet>
+        <facet>208 204 207</facet>
+        <facet>207 209 211</facet>
+        <facet>205 209 207</facet>
+        <facet>212 211 215</facet>
+        <facet>212 208 211</facet>
+        <facet>211 213 215</facet>
+        <facet>209 213 211</facet>
+        <facet>216 215 219</facet>
+        <facet>216 212 215</facet>
+        <facet>215 217 219</facet>
+        <facet>213 217 215</facet>
+        <facet>220 219 223</facet>
+        <facet>220 216 219</facet>
+        <facet>219 221 223</facet>
+        <facet>217 221 219</facet>
+        <facet>224 223 227</facet>
+        <facet>224 220 223</facet>
+        <facet>223 225 227</facet>
+        <facet>221 225 223</facet>
+        <facet>228 227 231</facet>
+        <facet>228 224 227</facet>
+        <facet>227 229 231</facet>
+        <facet>225 229 227</facet>
+        <facet>232 231 235</facet>
+        <facet>232 228 231</facet>
+        <facet>231 233 235</facet>
+        <facet>229 233 231</facet>
+        <facet>236 235 239</facet>
+        <facet>236 232 235</facet>
+        <facet>235 237 239</facet>
+        <facet>233 237 235</facet>
+        <facet>240 239 243</facet>
+        <facet>240 236 239</facet>
+        <facet>239 241 243</facet>
+        <facet>237 241 239</facet>
+        <facet>244 243 247</facet>
+        <facet>244 240 243</facet>
+        <facet>243 245 247</facet>
+        <facet>241 245 243</facet>
+        <facet>248 247 251</facet>
+        <facet>248 244 247</facet>
+        <facet>247 249 251</facet>
+        <facet>245 249 247</facet>
+        <facet>252 251 255</facet>
+        <facet>252 248 251</facet>
+        <facet>251 253 255</facet>
+        <facet>249 253 251</facet>
+        <facet>256 255 258</facet>
+        <facet>256 252 255</facet>
+        <facet>255 257 258</facet>
+        <facet>257 255 253</facet>
+        <facet>4 2 1</facet>
+        <facet>2 4 6</facet>
+        <facet>2 5 1</facet>
+        <facet>5 2 6</facet>
+        <facet>8 6 4</facet>
+        <facet>6 8 10</facet>
+        <facet>6 9 5</facet>
+        <facet>9 6 10</facet>
+        <facet>12 10 8</facet>
+        <facet>10 12 14</facet>
+        <facet>10 13 9</facet>
+        <facet>13 10 14</facet>
+        <facet>16 14 12</facet>
+        <facet>14 16 18</facet>
+        <facet>14 17 13</facet>
+        <facet>17 14 18</facet>
+        <facet>20 18 16</facet>
+        <facet>18 20 22</facet>
+        <facet>18 21 17</facet>
+        <facet>21 18 22</facet>
+        <facet>24 22 20</facet>
+        <facet>22 24 26</facet>
+        <facet>22 25 21</facet>
+        <facet>25 22 26</facet>
+        <facet>28 26 24</facet>
+        <facet>26 28 30</facet>
+        <facet>26 29 25</facet>
+        <facet>29 26 30</facet>
+        <facet>32 30 28</facet>
+        <facet>30 32 34</facet>
+        <facet>30 33 29</facet>
+        <facet>33 30 34</facet>
+        <facet>36 34 32</facet>
+        <facet>34 36 38</facet>
+        <facet>34 37 33</facet>
+        <facet>37 34 38</facet>
+        <facet>40 38 36</facet>
+        <facet>38 40 42</facet>
+        <facet>38 41 37</facet>
+        <facet>41 38 42</facet>
+        <facet>44 42 40</facet>
+        <facet>42 44 46</facet>
+        <facet>42 45 41</facet>
+        <facet>45 42 46</facet>
+        <facet>48 46 44</facet>
+        <facet>46 48 50</facet>
+        <facet>46 49 45</facet>
+        <facet>49 46 50</facet>
+        <facet>52 50 48</facet>
+        <facet>50 52 54</facet>
+        <facet>50 53 49</facet>
+        <facet>53 50 54</facet>
+        <facet>56 54 52</facet>
+        <facet>54 56 58</facet>
+        <facet>54 57 53</facet>
+        <facet>57 54 58</facet>
+        <facet>60 58 56</facet>
+        <facet>58 60 62</facet>
+        <facet>58 61 57</facet>
+        <facet>61 58 62</facet>
+        <facet>64 62 60</facet>
+        <facet>62 64 66</facet>
+        <facet>62 65 61</facet>
+        <facet>65 62 66</facet>
+        <facet>68 66 64</facet>
+        <facet>66 68 70</facet>
+        <facet>66 69 65</facet>
+        <facet>69 66 70</facet>
+        <facet>72 70 68</facet>
+        <facet>70 72 74</facet>
+        <facet>70 73 69</facet>
+        <facet>73 70 74</facet>
+        <facet>76 74 72</facet>
+        <facet>74 76 78</facet>
+        <facet>74 77 73</facet>
+        <facet>77 74 78</facet>
+        <facet>80 78 76</facet>
+        <facet>78 80 82</facet>
+        <facet>78 81 77</facet>
+        <facet>81 78 82</facet>
+        <facet>84 82 80</facet>
+        <facet>82 84 86</facet>
+        <facet>82 85 81</facet>
+        <facet>85 82 86</facet>
+        <facet>86 84 88</facet>
+        <facet>88 90 86</facet>
+        <facet>89 85 86</facet>
+        <facet>86 90 89</facet>
+        <facet>90 88 92</facet>
+        <facet>92 94 90</facet>
+        <facet>93 89 90</facet>
+        <facet>90 94 93</facet>
+        <facet>94 92 96</facet>
+        <facet>96 98 94</facet>
+        <facet>97 93 94</facet>
+        <facet>94 98 97</facet>
+        <facet>98 96 100</facet>
+        <facet>100 102 98</facet>
+        <facet>101 97 98</facet>
+        <facet>98 102 101</facet>
+        <facet>102 100 104</facet>
+        <facet>104 106 102</facet>
+        <facet>105 101 102</facet>
+        <facet>102 106 105</facet>
+        <facet>106 104 108</facet>
+        <facet>108 110 106</facet>
+        <facet>109 105 106</facet>
+        <facet>106 110 109</facet>
+        <facet>110 108 112</facet>
+        <facet>112 114 110</facet>
+        <facet>113 109 110</facet>
+        <facet>110 114 113</facet>
+        <facet>114 112 116</facet>
+        <facet>116 118 114</facet>
+        <facet>117 113 114</facet>
+        <facet>114 118 117</facet>
+        <facet>120 122 118</facet>
+        <facet>118 116 120</facet>
+        <facet>118 122 121</facet>
+        <facet>121 117 118</facet>
+        <facet>124 126 122</facet>
+        <facet>122 120 124</facet>
+        <facet>122 126 125</facet>
+        <facet>125 121 122</facet>
+        <facet>128 130 126</facet>
+        <facet>126 124 128</facet>
+        <facet>126 130 129</facet>
+        <facet>129 125 126</facet>
+        <facet>132 134 130</facet>
+        <facet>130 128 132</facet>
+        <facet>130 134 133</facet>
+        <facet>133 129 130</facet>
+        <facet>136 138 134</facet>
+        <facet>134 132 136</facet>
+        <facet>134 138 137</facet>
+        <facet>137 133 134</facet>
+        <facet>140 142 138</facet>
+        <facet>138 136 140</facet>
+        <facet>138 142 141</facet>
+        <facet>141 137 138</facet>
+        <facet>144 146 142</facet>
+        <facet>142 140 144</facet>
+        <facet>142 146 145</facet>
+        <facet>145 141 142</facet>
+        <facet>146 148 150</facet>
+        <facet>144 148 146</facet>
+        <facet>149 146 150</facet>
+        <facet>149 145 146</facet>
+        <facet>150 152 154</facet>
+        <facet>148 152 150</facet>
+        <facet>153 150 154</facet>
+        <facet>153 149 150</facet>
+        <facet>154 156 158</facet>
+        <facet>152 156 154</facet>
+        <facet>157 154 158</facet>
+        <facet>157 153 154</facet>
+        <facet>158 160 162</facet>
+        <facet>156 160 158</facet>
+        <facet>161 158 162</facet>
+        <facet>161 157 158</facet>
+        <facet>162 164 166</facet>
+        <facet>160 164 162</facet>
+        <facet>165 162 166</facet>
+        <facet>165 161 162</facet>
+        <facet>166 168 170</facet>
+        <facet>164 168 166</facet>
+        <facet>169 166 170</facet>
+        <facet>169 165 166</facet>
+        <facet>170 172 174</facet>
+        <facet>168 172 170</facet>
+        <facet>173 170 174</facet>
+        <facet>173 169 170</facet>
+        <facet>174 176 178</facet>
+        <facet>172 176 174</facet>
+        <facet>177 174 178</facet>
+        <facet>177 173 174</facet>
+        <facet>178 180 182</facet>
+        <facet>176 180 178</facet>
+        <facet>181 178 182</facet>
+        <facet>181 177 178</facet>
+        <facet>182 184 186</facet>
+        <facet>180 184 182</facet>
+        <facet>185 182 186</facet>
+        <facet>185 181 182</facet>
+        <facet>186 188 190</facet>
+        <facet>184 188 186</facet>
+        <facet>189 186 190</facet>
+        <facet>189 185 186</facet>
+        <facet>190 192 194</facet>
+        <facet>188 192 190</facet>
+        <facet>193 190 194</facet>
+        <facet>193 189 190</facet>
+        <facet>194 196 198</facet>
+        <facet>192 196 194</facet>
+        <facet>197 194 198</facet>
+        <facet>197 193 194</facet>
+        <facet>198 200 202</facet>
+        <facet>196 200 198</facet>
+        <facet>201 198 202</facet>
+        <facet>201 197 198</facet>
+        <facet>202 204 206</facet>
+        <facet>200 204 202</facet>
+        <facet>205 202 206</facet>
+        <facet>205 201 202</facet>
+        <facet>206 208 210</facet>
+        <facet>204 208 206</facet>
+        <facet>209 206 210</facet>
+        <facet>209 205 206</facet>
+        <facet>210 212 214</facet>
+        <facet>208 212 210</facet>
+        <facet>213 210 214</facet>
+        <facet>213 209 210</facet>
+        <facet>214 216 218</facet>
+        <facet>212 216 214</facet>
+        <facet>217 214 218</facet>
+        <facet>217 213 214</facet>
+        <facet>218 220 222</facet>
+        <facet>216 220 218</facet>
+        <facet>221 218 222</facet>
+        <facet>221 217 218</facet>
+        <facet>222 224 226</facet>
+        <facet>220 224 222</facet>
+        <facet>225 222 226</facet>
+        <facet>225 221 222</facet>
+        <facet>226 228 230</facet>
+        <facet>224 228 226</facet>
+        <facet>229 226 230</facet>
+        <facet>229 225 226</facet>
+        <facet>230 232 234</facet>
+        <facet>228 232 230</facet>
+        <facet>233 230 234</facet>
+        <facet>233 229 230</facet>
+        <facet>234 236 238</facet>
+        <facet>232 236 234</facet>
+        <facet>237 234 238</facet>
+        <facet>237 233 234</facet>
+        <facet>238 240 242</facet>
+        <facet>236 240 238</facet>
+        <facet>241 238 242</facet>
+        <facet>241 237 238</facet>
+        <facet>242 244 246</facet>
+        <facet>240 244 242</facet>
+        <facet>245 242 246</facet>
+        <facet>245 241 242</facet>
+        <facet>246 248 250</facet>
+        <facet>244 248 246</facet>
+        <facet>249 246 250</facet>
+        <facet>249 245 246</facet>
+        <facet>250 252 254</facet>
+        <facet>248 252 250</facet>
+        <facet>253 250 254</facet>
+        <facet>253 249 250</facet>
+        <facet>254 256 258</facet>
+        <facet>256 254 252</facet>
+        <facet>257 254 258</facet>
+        <facet>257 253 254</facet>
+      </facets>
+    </object>
+    
+<!--    <object id="oloid1" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.0 1.0 1.0</scaleFactors>
+        <translation>+3.0 +0.0 +3.0</translation>
+    </object>
+    <object id="oloid2" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.0 1.0 1.0</scaleFactors>
+        <translation>-3.0 +0.0 +3.0</translation>
+    </object>    
+    <object id="oloid3" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.0 1.0 1.0</scaleFactors>
+        <translation>+3.0 +0.0 -3.0</translation>
+    </object>      
+    <object id="oloid4" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.0 1.0 1.0</scaleFactors>
+        <translation>-3.0 +0.0 -3.0</translation>
+    </object>      -->
+<!--    <object id="oloid1" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.15 0.5 1.15</scaleFactors>
+        <translation>+3.0 +5.0 +3.0</translation>
+    </object>
+    <object id="oloid2" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.15 1.5 1.15</scaleFactors>
+        <translation>-3.0 +5.0 +3.0</translation>
+    </object>    
+    <object id="oloid3" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.15 1.5 1.15</scaleFactors>
+        <translation>+3.0 +5.0 -3.0</translation>
+    </object>      
+    <object id="oloid4" type="transform">
+        <model>oloid</model>
+        <scaleFactors>1.15 0.5 1.15</scaleFactors>
+        <translation>-3.0 +5.0 -3.0</translation>
+    </object>  -->
+  </scene>
+</image>

@@ -7,6 +7,7 @@ package objects;
 import java.awt.Color;
 import primitives.Vector3D;
 import primitives.Point3D;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 
@@ -17,21 +18,39 @@ public final class Plane extends Object3D {
   private final Vector3D normalOpposite;
 
   public Plane(final Point3D p, final Vector3D n, final Color color) {
+    super(color);
     this.P = new Point3D(p);
     this.normal = n;
     this.normal.normalize();
     this.normalOpposite = normal.opposite();
-    this.color = color;
+  }
+
+  public Plane(Point3D p, Vector3D n, Material material) {
+    super(material);
+    this.P = new Point3D(p);
+    this.normal = n;
+    this.normal.normalize();
+    this.normalOpposite = normal.opposite();
   }
 
   public Plane(final Point3D a, final Point3D b, final Point3D c, final Color color) {
+    super(color);
     this.P = new Point3D(a);
     final Vector3D BA = new Vector3D(a, b);
     final Vector3D CA = new Vector3D(a, c);
     this.normal = (BA.cross(CA));
     this.normal.normalize();
     this.normalOpposite = normal.opposite();
-    this.color = color;
+  }
+
+  public Plane(final Point3D a, final Point3D b, final Point3D c, final Material material) {
+    super(material);
+    this.P = new Point3D(a);
+    final Vector3D BA = new Vector3D(a, b);
+    final Vector3D CA = new Vector3D(a, c);
+    this.normal = (BA.cross(CA));
+    this.normal.normalize();
+    this.normalOpposite = normal.opposite();
   }
 
   @Override

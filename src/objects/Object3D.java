@@ -2,13 +2,14 @@ package objects;
 
 import java.awt.Color;
 import java.util.List;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 
 public abstract class Object3D {
 
   protected Color color;
-  //protected Shader material;
+  protected Material material;
   protected boolean avoided = false;
 
   public Object3D() {
@@ -25,12 +26,30 @@ public abstract class Object3D {
   }
 
   /**
+   * Este constructor permite definir el material del objeto a crear
+   *
+   * @param material
+   */
+  public Object3D(final Material material) {
+    this.material = material;
+  }
+
+  /**
    * Devuelve el color del objeto
    *
    * @return this.color
    */
   public final Color getColor() {
     return color;
+  }
+
+  /**
+   * Devuelve el material del objeto
+   *
+   * @return this.material
+   */
+  public final Material getMaterial() {
+    return material;
   }
 
   public final void avoid() {

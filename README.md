@@ -1,5 +1,5 @@
 # UPNA | Computer Graphics
-## Project: Basic Ray Tracer
+## Project: Recursive ray tracer with illumination
 
 __Authors:__ [Álvaro Orduna León](https://github.com/AlvaroOrduna).
 
@@ -10,6 +10,5 @@ professor of the subject.
 
 ### Goal
 
-This activity consists of the implementation of a very elementary ray tracer
-that only provides the possibility of using objects of simple geometry and
-uniform color in scenes modeling.
+Expand the capabilities of the ray tracer to include color calculations
+based on lighting.

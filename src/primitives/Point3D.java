@@ -2,7 +2,7 @@ package primitives;
 
 import javax.vecmath.Point3f;
 
-public final class Point3D extends Point3f {
+public class Point3D extends Point3f {
 
   public Point3D(final float x, final float y, final float z) {
     super(x, y, z);
@@ -39,7 +39,7 @@ public final class Point3D extends Point3f {
 
   @Override
   public String toString() {
-    return "(" + getX() + "," + getY() + "," + getZ() + ")";
+    return "<" + getX() + "," + getY() + "," + getZ() + ">";
   }
 
 }

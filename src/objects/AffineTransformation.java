@@ -1,4 +1,4 @@
-package objects.transformations;
+package objects;
 
 import java.awt.Color;
 import javax.vecmath.Matrix4f;
@@ -7,6 +7,7 @@ import javax.vecmath.Vector4f;
 import objects.Object3D;
 import primitives.Point3D;
 import primitives.Vector3D;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 
@@ -91,6 +92,18 @@ public class AffineTransformation extends Object3D {
           final Vector3f s, // Factores de escala
           final Vector3f axis, // Dirección de eje de rotación
           final float theta, // Ángulo de rotación
+          final Vector3f d, // Vector de traslación
+          final Object3D object, // Objeto sobre el que actuar
+          final Color color
+  ) {
+    this(s, axis, theta, d, object);
+    this.color = color;
+  }
+
+  public AffineTransformation(
+          final Vector3f s, // Factores de escala
+          final Vector3f axis, // Dirección de eje de rotación
+          final float theta, // Ángulo de rotación
           final Object3D object, // Objeto sobre el que actuar
           final Color color
   ) {
@@ -117,6 +130,50 @@ public class AffineTransformation extends Object3D {
   ) {
     this(s, null, R_IDENTITY, d, object);
     this.color = color;
+  }
+
+  public AffineTransformation(
+          final Vector3f s, // Factores de escala
+          final Vector3f axis, // Dirección de eje de rotación
+          final float theta, // Ángulo de rotación
+          final Vector3f d, // Vector de traslación
+          final Object3D object, // Objeto sobre el que actuar
+          final Material material
+  ) {
+    this(s, axis, theta, d, object);
+    this.material = material;
+  }
+
+  public AffineTransformation(
+          final Vector3f s, // Factores de escala
+          final Vector3f axis, // Dirección de eje de rotación
+          final float theta, // Ángulo de rotación
+          final Object3D object, // Objeto sobre el que actuar
+          final Material material
+  ) {
+    this(s, axis, theta, D_IDENTITY, object);
+    this.material = material;
+  }
+
+  public AffineTransformation(
+          final Vector3f axis, // Dirección de eje de rotación
+          final float theta, // Ángulo de rotación
+          final Vector3f d, // Vector de traslación
+          final Object3D object, // Objeto sobre el que actuar
+          final Material material
+  ) {
+    this(S_IDENTITY, axis, theta, d, object);
+    this.material = material;
+  }
+
+  public AffineTransformation(
+          final Vector3f s, // Factores de escala
+          final Vector3f d, // Vector de traslación
+          final Object3D object, // Objeto sobre el que actuar
+          final Material material
+  ) {
+    this(s, null, R_IDENTITY, d, object);
+    this.material = material;
   }
 
   private Matrix4f scaleMatrix(final Vector3f s) {

@@ -10,6 +10,7 @@ import java.util.List;
 
 import primitives.Vector3D;
 import primitives.Point3D;
+import shaders.Material;
 import tracer.Hit;
 import tracer.Ray;
 
@@ -48,6 +49,11 @@ public class Triangle extends Object3D {
   public Triangle(final Point3D a, final Point3D b, final Point3D c, final Color color) {
     this(a, b, c);
     this.color = color;
+  }
+
+  public Triangle(final Point3D a, final Point3D b, final Point3D c, final Material material) {
+    this(a, b, c);
+    this.material = material;
   }
 
   @Override

@@ -1,9 +1,10 @@
-package objects.bounding;
+package objects.boundingboxes;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-import objects.bounding.BoundingFace.EclideanPlane;
+import objects.boundingboxes.BoundingFace.EclideanPlane;
 import primitives.Point3D;
 import tracer.Ray;
 
@@ -19,7 +20,7 @@ public final class OrthoedricBoundingBox extends BoundingBox {
 
   private final ArrayList<BoundingFace> faces = new ArrayList();
 
-  public OrthoedricBoundingBox(Map<Integer, Point3D> vertices) {
+  public OrthoedricBoundingBox(Collection<Point3D> vertices) {
     float X_max = 0;
     float X_min = 0;
     float Y_max = 0;
@@ -27,9 +28,7 @@ public final class OrthoedricBoundingBox extends BoundingBox {
     float Z_max = 0;
     float Z_min = 0;
 
-    Point3D v;
-    for (Map.Entry<Integer, Point3D> vertex : vertices.entrySet()) {
-      v = vertex.getValue();
+    for (Point3D v : vertices) {
       if (X_max < v.x) {
         X_max = v.x;
       }

@@ -3,18 +3,18 @@ package tracer;
 import view.Camera;
 
 public abstract class RayGenerator {
+	
+  final protected Camera camera; // Camara para la que se generan los rayos
+  final protected float w; // Anchura de la ventana de proyeccion
+  final protected float h; // Altura de la ventana de proyeccion
+  final protected int W; // Numero de columnas de la imagen raster
+  final protected int H; // Numero de filas de la imagen raster
+  final protected float wW; // Relación entre w y W
+  final protected float hH; // Relación entre h y H
+  final protected float whalf; // w / 2
+  final protected float hhalf; // h / 2
 
-  final protected Camera camera; // Cámara para la que se generan los rayos
-  final protected float w;       // Anchura de la ventana de proyección
-  final protected float h;       // Altura de la ventana de proyección
-  final protected int W;         // Número de columnas de la imagen raster
-  final protected int H;         // Número de filas de la imagen raster
-  final protected float wW;      // Relación entre w y W
-  final protected float hH;      // Relación entre h y H
-  final protected float whalf;   // w / 2
-  final protected float hhalf;   // h / 2
-
-  protected RayGenerator(final Camera c, final int W, final int H) {
+  protected RayGenerator (final Camera c, final int W, final int H) {
 
     this.camera = new Camera(c);
     this.w = c.getProjection().getWidth();
@@ -34,6 +34,6 @@ public abstract class RayGenerator {
    * @param n
    * @return
    */
-  public abstract Ray getRay(final int m, final int n);
-
+  public abstract Ray getRay (final int m, final int n);
+	
 }
