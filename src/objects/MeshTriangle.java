@@ -49,7 +49,20 @@ public class MeshTriangle extends Triangle {
 
   @Override
   protected Hit _intersects(final Ray r) {
-    return super._intersects(r);
-  }
+    Hit superHit = super._intersects(r);
+    if (!superHit.hits()) {
+      return superHit;
+    }
 
+    Point3D P = superHit.getPoint();
+    float beta = P.sub(A).dot(AB) / AB.length();
+    float gamma = P.sub(A).dot(AC) / AC.length();
+
+    Vector3D hitNormal = normalAtA.multiplyByScalar(1 - beta - gamma)
+            .add(normalAtB.multiplyByScalar(beta))
+            .add(normalAtC.multiplyByScalar(gamma));
+    hitNormal.normalize();
+
+    return new Hit(superHit.getT(), P, hitNormal, this);
+  }
 }
