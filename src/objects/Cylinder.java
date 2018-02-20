@@ -86,8 +86,9 @@ public final class Cylinder extends Object3D {
             final float dIn = PinB.dot(u);
 
             if (Math.signum(halfL - Math.abs(dIn)) > 0) {
-              return new Hit(tIn, Pin,
-                      new Vector3D(Pin, ray.pointAtParameter(dIn)), this);
+              Vector3D n = new Vector3D(Pin, ray.pointAtParameter(dIn));
+              n.normalize();
+              return new Hit(tIn, Pin, n, this);
             }
 
             // Aún puede intersectar por las tapas. En este caso, tendríamos que
@@ -106,7 +107,9 @@ public final class Cylinder extends Object3D {
               final float t = RTapa.dot(u) / v.dot(u);
 
               if (Math.signum(t) >= 0) {
-                return new Hit(t, ray.pointAtParameter(t), u, this);
+                Vector3D n = new Vector3D(u);
+                n.normalize();
+                return new Hit(t, ray.pointAtParameter(t), n, this);
               }
             } else if (Math.signum(halfL - dOut) > 0 && Math.signum(dIn) > 0) {
               // Rayo intersecta con tapa trasera (siguiendo el sentido de u)
@@ -114,7 +117,9 @@ public final class Cylinder extends Object3D {
               final float t = RTapa.dot(u_opposite) / v.dot(u_opposite);
 
               if (Math.signum(t) >= 0) {
-                return new Hit(t, ray.pointAtParameter(t), u_opposite, this);
+                Vector3D n = new Vector3D(u_opposite);
+                n.normalize();
+                return new Hit(t, ray.pointAtParameter(t), n, this);
               }
             }
           }
@@ -157,8 +162,9 @@ public final class Cylinder extends Object3D {
 
           if (Math.signum(halfL - Math.abs(dOut)) > 0) {
             // Rayo sale del cilindro por la pared del cilindro
-            return new Hit(tOut, Pout,
-                    new Vector3D(ray.pointAtParameter(dOut), Pout), this);
+            Vector3D n = new Vector3D(ray.pointAtParameter(dOut), Pout);
+            n.normalize();
+            return new Hit(tOut, Pout, n, this);
           } else {
             // Rayo sale del cilindro por una tapa
             final Vector3D n = Math.signum(RBdotU) > 0 ? u : u_opposite;
@@ -166,6 +172,7 @@ public final class Cylinder extends Object3D {
             final float t = RTapa.dot(n) / v.dot(n);
 
             if (Math.signum(t) >= 0) {
+              n.normalize();
               return new Hit(t, ray.pointAtParameter(t), n, this);
             }
           }
@@ -176,6 +183,7 @@ public final class Cylinder extends Object3D {
           final float t = RTapa.dot(n) / v.dot(n);
 
           if (Math.signum(t) >= 0) {
+            n.normalize();
             return new Hit(t, ray.pointAtParameter(t), n, this);
           }
         }
