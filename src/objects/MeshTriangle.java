@@ -48,21 +48,41 @@ public class MeshTriangle extends Triangle {
   }
 
   @Override
-  protected Hit _intersects(final Ray r) {
-    Hit superHit = super._intersects(r);
-    if (!superHit.hits()) {
-      return superHit;
+  protected Hit _intersects(final Ray ray) {
+    final Point3D R = ray.getStartingPoint();
+    final Vector3D v = ray.getDirection();
+
+    final float c = v.dot(normal);
+    if (Math.signum(c) < 0) {
+      // Rayo entra por la cara exterior
+      final Vector3D AR = new Vector3D(A, R);
+      final float b = AR.dot(normal);
+
+      if (Math.signum(b) >= 0) {
+        // Intersección en semiespacio posterior (visible)
+        final float dd = (float) (factorM / c);
+        final float bb = AC.dot(v.cross(AR)) * dd;
+
+        if (Math.signum(bb) >= 0 && bb <= 1) {
+          final float cc = -(AB.dot(v.cross(AR)) * dd);
+
+          if (Math.signum(cc) >= 0 && cc <= 1 && (bb + cc) <= 1) {
+            final float a = -b / c;
+            Vector3D n = normalAtA.multiplyByScalar(1 - bb - cc)
+                    .add(normalAtB.multiplyByScalar(bb))
+                    .add(normalAtC.multiplyByScalar(cc));
+            n.normalize();
+            return new Hit(a, ray.pointAtParameter(a), n, this);
+          }
+        }
+      }
     }
 
-    Point3D P = superHit.getPoint();
-    float beta = P.sub(A).dot(AB) / AB.length();
-    float gamma = P.sub(A).dot(AC) / AC.length();
-
-    Vector3D hitNormal = normalAtA.multiplyByScalar(1 - beta - gamma)
-            .add(normalAtB.multiplyByScalar(beta))
-            .add(normalAtC.multiplyByScalar(gamma));
-    hitNormal.normalize();
-
-    return new Hit(superHit.getT(), P, hitNormal, this);
+    // Llegados aquí:
+    // - Rayo entra por la cara posterior del triángulo
+    // - Rayo discurre paralelo al plano definido por el triángulo
+    // - El cruce se produce en el semiespacio anterior (oculto)
+    // - Rayo no intersecta por los valores de alpha, beta y gamma
+    return Hit.NOHIT;
   }
 }
