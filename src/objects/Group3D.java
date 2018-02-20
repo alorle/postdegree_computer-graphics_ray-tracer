@@ -42,4 +42,7 @@ public final class Group3D extends Object3D {
 
   }
 
+  public boolean intersectsAnyCloser(final Ray ray, final Hit hit) {
+    return objetos.stream().anyMatch((objeto) -> (objeto.intersects(ray).getT() < hit.getT()));
+  }
 }
