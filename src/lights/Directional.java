@@ -49,15 +49,39 @@ public class Directional extends Light {
           final SpectrumRGB spectrum,
           final float power) {
     super(position, spectrum, power);
-    direction = null;
-    squareRadius = 0;
-    puntualIrradiance = null;
+    direction = lookAt.sub(S);
+    direction.normalize();
+    squareRadius = radius * radius;
+    final float s = (float) (squareRadius * Math.PI);
+    puntualIrradiance = emissionSpectrum.distribute(power / s);
   }
 
   @Override
   public RadianceRGB irradianceAt(final Hit hit, final Group3D scene) {
+    final Point3D P = hit.getPoint();
+    final Vector3D PS = getPosition().sub(P);
+    final Vector3D I = new Vector3D(PS);
+    I.normalize();
 
-    return RadianceRGB.NORADIANCE;
+    final Ray ray = new Ray(getPosition(), P);
+
+    // Comprobar que el punto de incidencia no queda
+    // fuera del cilindro infinito definido por la
+    // la fuente luminosa direccional
+    final float PSdotD = PS.dot(direction);
+    final float d2 = PS.dot(PS) - (PSdotD * PSdotD);
+    if (Math.signum(d2 - squareRadius) > 0) {
+      return RadianceRGB.NORADIANCE;
+    }
+
+    // Comprobar que el punto de incidencia no queda
+    // oculto por alguno de los elementos de la escena
+    if (scene.intersectsAnyCloser(ray, hit)) {
+      return RadianceRGB.NORADIANCE;
+    }
+
+    final float nDotI = hit.getNormal().dot(I);
+    return puntualIrradiance.scale(nDotI);
   }
 
   /**

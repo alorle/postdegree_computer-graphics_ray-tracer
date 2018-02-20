@@ -5,7 +5,6 @@ package lights;
  *
  * @author MAZ
  */
-
 import primitives.Point3D;
 import primitives.Vector3D;
 import objects.Group3D;
@@ -54,15 +53,36 @@ public class Spot extends Light {
     if (aperture > 90.0f) {
       throw new IllegalArgumentException("El ángulo de apertura proporcionado (" + aperture + "º) es inválido, debe estar comprendido entre 0º y 90º.");
     }
-    direction = null;
-    apertureIndex = 0;
-    radiantIntensity = null;
+    direction = lookAt.sub(S);
+    direction.normalize();
+    apertureIndex = (float) Math.cos(Math.toRadians(aperture));
+    final float w = (float) (power / (2 * Math.PI * (1 - apertureIndex)));
+    radiantIntensity = emissionSpectrum.distribute(w);
   }
 
   @Override
   public RadianceRGB irradianceAt(final Hit hit, final Group3D scene) {
+    final Point3D P = hit.getPoint();
+    final Vector3D PS = getPosition().sub(P);
+    final Vector3D I = new Vector3D(PS);
+    I.normalize();
 
-    return RadianceRGB.NORADIANCE;
+    // Comprobar que el punto de incidencia no queda
+    // fuera del cono de iluminación
+    if (-apertureIndex < I.dot(direction)) {
+      return RadianceRGB.NORADIANCE;
+    }
+
+    // Comprobar que el punto de incidencia no queda
+    // oculto por alguno de los elementos de la escena
+    final Ray ray = new Ray(getPosition(), P);
+    if (scene.intersectsAnyCloser(ray, hit)) {
+      return RadianceRGB.NORADIANCE;
+    }
+
+    final float dSquare = PS.dot(PS);
+    final float nDotI = hit.getNormal().dot(I);
+    return radiantIntensity.scale(nDotI / dSquare);
   }
 
   /**

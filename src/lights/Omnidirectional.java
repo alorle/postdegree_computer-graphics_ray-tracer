@@ -28,13 +28,26 @@ public class Omnidirectional extends Light {
           final SpectrumRGB spectrum,
           final float power) {
     super(position, spectrum, power);
-    radiantIntensity = null;
+    radiantIntensity = emissionSpectrum.distribute(power);
   }
 
   @Override
   public RadianceRGB irradianceAt(final Hit hit, final Group3D scene) {
+    final Point3D P = hit.getPoint();
+    final Vector3D PS = getPosition().sub(P);
+    final Vector3D I = new Vector3D(PS);
+    I.normalize();
 
-    return RadianceRGB.NORADIANCE;
+    // Comprobar que el punto de incidencia no queda
+    // oculto por alguno de los elementos de la escena
+    final Ray ray = new Ray(getPosition(), P);
+    if (scene.intersectsAnyCloser(ray, hit)) {
+      return RadianceRGB.NORADIANCE;
+    }
+
+    final float dSquare = PS.dot(PS);
+    final float nDotI = hit.getNormal().dot(I);
+    return radiantIntensity.scale(nDotI / dSquare);
   }
 
   @Override
