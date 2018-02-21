@@ -33,6 +33,7 @@ public class Triangle extends Object3D {
     normal = x.normal;
     factorM = x.factorM;
     color = x.color;
+    material = x.material;
   }
 
   private Triangle(final Point3D a, final Point3D b, final Point3D c) {
