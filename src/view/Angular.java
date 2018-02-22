@@ -53,10 +53,12 @@ public class Angular extends Projection {
       final float dSquare = x * x + y * y;
 
       Point3D Q;
+      Point3D R;
       if (dSquare > radioSquare) {
         // Como el pixel está fuera de la circunferencia de proyección,
-        // definimos Q de manera que el rayo que obtenemos no sea correcto.
+        // definimos Q y R de manera que el rayo que obtenemos no sea correcto.
         Q = camera.getPosition();
+        R = camera.getPosition();
       } else {
         // Definimos z en función de la ecuación de la esfera que define el
         // casquete de proyección
@@ -64,9 +66,14 @@ public class Angular extends Projection {
 
         Q = new Point3D(x, y, z);
         camera.toSceneCoord(Q);
+
+        // El punto de partida del rayo (R) será el punto central de la esfera
+        // que define la ventana de proyección.
+        R = new Point3D(0, 0, omegaHalfCos);
+        camera.toSceneCoord(R);
       }
 
-      return new Ray(camera.getPosition(), Q);
+      return new Ray(R, Q);
     }
 
   }
