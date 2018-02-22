@@ -76,6 +76,11 @@ public class BoundingFace extends Object3D {
     }
   }
 
+  protected boolean visibleFrom(Ray ray) {
+    // La cara es visible por el rayo si forma un angulo obtuso con ella
+    return ray.getDirection().dot(normal) < 0;
+  }
+
   @Override
   protected Hit _intersects(Ray ray) {
     final float a = ray.getDirection().dot(normal);
