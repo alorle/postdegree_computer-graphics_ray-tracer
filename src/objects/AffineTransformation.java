@@ -57,7 +57,10 @@ public class AffineTransformation extends Object3D {
     if (R != null) {
       N.mul(R);
     }
-    N.mul(S);
+
+    Matrix4f Sinv = new Matrix4f(S);
+    Sinv.invert();
+    N.mul(Sinv);
 
     model = object;
   }

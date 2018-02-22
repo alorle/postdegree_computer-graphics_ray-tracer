@@ -84,8 +84,25 @@ public final class OrthoedricBoundingBox extends BoundingBox {
 
   @Override
   public boolean intersect(Ray ray) {
-    // Si el rayo intersecta con alguna de las caras, devolvemos verdadero
-    return faces.stream().anyMatch((face) -> (face.intersects(ray).hits()));
+    int visibleFaces = 0;
+    for (final BoundingFace face : faces) {
+      if (face.visibleFrom(ray)) {
+        if (face.intersects(ray).hits()) {
+          return true;
+        }
+        visibleFaces++;
+
+        // Desde el punto de partida del rayo pueden ser visibles, a lo sumo,
+        // tres caras, por tanto, si tres caras visibles han sido testadas y
+        // ninguna ha devuelto un Hit válido, entonces no merece la pena seguir
+        // comprobando el resto.
+        if (visibleFaces >= 3) {
+          return false;
+        }
+      }
+    }
+
+    return false;
   }
 
 }

@@ -80,7 +80,7 @@ public class Sphere extends Object3D {
     } else if (c < 0) {
       // Punto de origen dentro de la esfera
       final float b = RC.dot(v);
-      final float t = b + (float) Math.sqrt(4 * b * b - 4 * c) * 0.5f;
+      final float t = b + (float) Math.sqrt(b * b - c);
       final Point3D P = ray.pointAtParameter(t);
       final Vector3D normal = new Vector3D(C, P);
       normal.normalize();
