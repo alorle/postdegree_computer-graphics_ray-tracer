@@ -69,14 +69,14 @@ public class Spot extends Light {
 
     // Comprobar que el punto de incidencia no queda
     // fuera del cono de iluminación
-    if (-apertureIndex < I.dot(direction)) {
+    if (Math.signum(I.dot(direction) + apertureIndex) > 0) {
       return RadianceRGB.NORADIANCE;
     }
 
     // Comprobar que el punto de incidencia no queda
     // oculto por alguno de los elementos de la escena
-    final Ray ray = new Ray(getPosition(), P);
-    if (scene.intersectsAnyCloser(ray, hit)) {
+    final Ray ray = new Ray(getPosition(), PS);
+    if (scene.intersectsAnyCloser(ray, hit, PS.lengthSquared())) {
       return RadianceRGB.NORADIANCE;
     }
 

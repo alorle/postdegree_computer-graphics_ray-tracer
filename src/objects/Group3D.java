@@ -1,6 +1,7 @@
 package objects;
 
 import java.util.ArrayList;
+import primitives.Vector3D;
 import tracer.Hit;
 import tracer.Ray;
 
@@ -42,7 +43,17 @@ public final class Group3D extends Object3D {
 
   }
 
-  public boolean intersectsAnyCloser(final Ray ray, final Hit hit) {
-    return objetos.stream().anyMatch((objeto) -> (objeto.intersects(ray).getT() < hit.getT()));
+  public boolean intersectsAnyCloser(final Ray ray, final Hit hit, final float squareDistance) {
+    return objetos.stream().anyMatch((obj) -> {
+      if (!hit.getObject().equals(obj)) {
+        final Hit objHit = obj.intersects(ray);
+        if (objHit.hits()) {
+          final Vector3D v = new Vector3D(ray.getStartingPoint(), objHit.getPoint());
+          return Math.signum(squareDistance - v.lengthSquared()) > 0;
+        }
+      }
+
+      return false;
+    });
   }
 }

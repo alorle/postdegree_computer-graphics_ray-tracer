@@ -63,8 +63,6 @@ public class Directional extends Light {
     final Vector3D I = new Vector3D(PS);
     I.normalize();
 
-    final Ray ray = new Ray(getPosition(), P);
-
     // Comprobar que el punto de incidencia no queda
     // fuera del cilindro infinito definido por la
     // la fuente luminosa direccional
@@ -76,7 +74,8 @@ public class Directional extends Light {
 
     // Comprobar que el punto de incidencia no queda
     // oculto por alguno de los elementos de la escena
-    if (scene.intersectsAnyCloser(ray, hit)) {
+    final Ray ray = new Ray(getPosition(), PS);
+    if (scene.intersectsAnyCloser(ray, hit, PS.lengthSquared())) {
       return RadianceRGB.NORADIANCE;
     }
 
