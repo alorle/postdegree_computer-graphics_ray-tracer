@@ -31,7 +31,7 @@ public final class CookTorranceSparrow extends BRDF {
           final Group3D scene,
           final Hit hit,
           final Point3D V) {
-    return null;
+    return RadianceRGB.NORADIANCE;
   }
 
 }
